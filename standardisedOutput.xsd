@@ -79,11 +79,11 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <!-- TEST -->
-                    <xs:element minOccurs="0" name="RawResults" type="so:SORawResultsType"/>
-                    <!-- /TEST -->
-                    <xs:element minOccurs="0" name="Estimation" type="so:SOEstimationType"/>
-                    <!-- more elements to come here -->
+                    <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
+                    <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
+<!--                    <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
+                    <xs:element minOccurs="0" name="SimulationExploration" type="so:SimulationExplorationType"/>
+                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                 </xs:sequence>
                 <xs:attributeGroup ref="ct:BlockDefnGroup"/>
             </xs:extension>
@@ -91,7 +91,7 @@ permissions and limitations under the License.
     </xs:complexType>
 
     <!-- TEST -->
-    <xs:complexType name="SORawResultsType">
+    <xs:complexType name="RawResultsType">
         <xs:annotation>
             <xs:documentation>Row Results Type</xs:documentation>
         </xs:annotation>
@@ -105,7 +105,7 @@ permissions and limitations under the License.
     </xs:complexType>
     <!-- /TEST -->
     
-    <xs:complexType name="SOEstimationType">
+    <xs:complexType name="EstimationType">
         <xs:annotation>
             <xs:documentation>Type defining the estimation part of the SO.</xs:documentation>
         </xs:annotation>
@@ -169,27 +169,7 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
-    <!-- TEST -->
-<!--    <xs:complexType name="SOTableType">
-        <xs:annotation>
-            <xs:documentation>Type defining the table for estimation results.</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="DataSet" type="ds:DataSetType">
-                        <xs:annotation>
-                            <xs:documentation>
-                                Inline data set/table or as an external file.
-                            </xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>-->
-    
+
     <xs:complexType name="SOMatrixType">
         <xs:annotation>
             <xs:documentation>Type defining the natrix with estimation results.</xs:documentation>
@@ -206,24 +186,7 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
-<!--      <xs:complexType name="SOScalarType">
-        <xs:annotation>
-            <xs:documentation>Type defining the estimation results.</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element ref="ct:Scalar">
-                        <xs:annotation>
-                            <xs:documentation>Scalar for results storage.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>-->
-    
+
     <xs:complexType name="SOTableDistribType">
         <xs:annotation>
             <xs:documentation>Type defining distribution of the estimation results.</xs:documentation>
