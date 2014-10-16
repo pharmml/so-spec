@@ -228,12 +228,12 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="MLEEstimates" minOccurs="0" type="ds:DataSetType">
+                    <xs:element name="MLE" minOccurs="0" type="ds:DataSetType">
                         <xs:annotation>
                             <xs:documentation>Placeholder for MLE population estimates.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="BayesianEstimates" minOccurs="0">
+                    <xs:element name="Bayesian" minOccurs="0">
                         <xs:annotation>
                             <xs:documentation>Placeholder for Bayesian population estimates.</xs:documentation>
                         </xs:annotation>
@@ -279,7 +279,7 @@ permissions and limitations under the License.
                                 <xs:extension base="ct:PharmMLRootType">
                                     <xs:sequence>
                                         <xs:element name="FIM" minOccurs="0" type="so:SOMatrixType"/>
-                                        <xs:element name="InverseFIM" minOccurs="0" type="so:SOMatrixType"/>
+                                        <xs:element name="CovarianceMatrix" minOccurs="0" type="so:SOMatrixType"/>
                                         <xs:element name="CorrelationMatrix" minOccurs="0" type="so:SOMatrixType"/>
                                         <xs:element name="StandardError" minOccurs="0" type="ds:DataSetType"/>
                                         <xs:element name="RelativeStandardError" minOccurs="0" type="ds:DataSetType"/>
@@ -357,7 +357,7 @@ permissions and limitations under the License.
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
-                    <xs:element name="EtaShirnkage" minOccurs="0" type="ds:DataSetType"/>                                        
+                    <xs:element name="EtaShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
                     <xs:element name="MLERandomEffects" minOccurs="0" type="ds:DataSetType"/>                                        
                     <xs:element minOccurs="0" name="BayesianIndividualEffects">
                         <xs:annotation>
@@ -434,10 +434,24 @@ permissions and limitations under the License.
                 <xs:sequence>
                     <xs:element name="LogLikelihood" minOccurs="0" type="ct:RealValueType"/>
                     <xs:element name="Deviance" minOccurs="0" type="ct:RealValueType"/>
+                    <xs:element name="OFV" minOccurs="0" type="ct:RealValueType"/>
+                    <xs:element name="IndividualContribToLL" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="InformationCriteria" minOccurs="0" type="so:InformationCriteriaType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="InformationCriteriaType">
+        <xs:annotation>
+            <xs:documentation>AIC, BIC and DIC measures to be defined here.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
                     <xs:element name="AIC" minOccurs="0" type="ct:RealValueType"/>
                     <xs:element name="BIC" minOccurs="0" type="ct:RealValueType"/>
-                    <xs:element name="DIC" minOccurs="0" type="ct:RealValueType"/>
-                    <xs:element name="IndividualContribToLL" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="DIC" minOccurs="0" type="ct:RealValueType"/>                        
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
