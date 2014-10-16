@@ -421,7 +421,7 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="PosteriorDistributionIndividualEstimates" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="PosteriorDistributionIndividualEstimates" minOccurs="0" type="so:SOTableDistribType"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
