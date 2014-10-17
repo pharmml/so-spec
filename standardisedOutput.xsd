@@ -343,27 +343,27 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
                     <!-- MLE -->
-                    <xs:element minOccurs="0" name="MLE">
+                    <xs:element minOccurs="0" name="Estimates">
                         <xs:annotation>
                             <xs:documentation>
-                                MLE individual estimates.
+                                Individual estimates.
                             </xs:documentation>
                         </xs:annotation>
                         <xs:complexType>
                             <xs:complexContent>
                                 <xs:extension base="ct:PharmMLRootType">
                                     <xs:sequence>
-                                        <xs:element name="ConditionalEstimates" minOccurs="0" type="ds:DataSetType"/>
-                                        <xs:element name="RandomEffects" minOccurs="0" type="ds:DataSetType"/>                                        
-                                        <xs:element name="EtaShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
-                                        
+                                        <xs:element name="Mean" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="Median" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="Mode" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>
                                     </xs:sequence>
                                 </xs:extension>
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
                     <!-- BAYESIAN -->
-                    <xs:element minOccurs="0" name="Bayesian">
+                    <xs:element minOccurs="0" name="RandomEffects">
                         <xs:annotation>
                             <xs:documentation>
                                 Bayesian individual estimates.
@@ -373,43 +373,16 @@ permissions and limitations under the License.
                             <xs:complexContent>
                                 <xs:extension base="ct:PharmMLRootType">
                                     <xs:sequence>
-                                        <xs:element minOccurs="0" name="PosteriorEstimates">
-                                            <xs:annotation>
-                                                <xs:documentation>Bayesian individual estimates.</xs:documentation>
-                                            </xs:annotation>
-                                            <xs:complexType>
-                                                <xs:complexContent>
-                                                    <xs:extension base="ct:PharmMLRootType">
-                                                        <xs:sequence>
-                                                            <xs:element name="PosteriorMean" minOccurs="0" type="ds:DataSetType"/>                                        
-                                                            <xs:element name="PosteriorMedian" minOccurs="0" type="ds:DataSetType"/>                                        
-                                                            <xs:element name="PosteriorMode" minOccurs="0" type="ds:DataSetType"/>                                        
-                                                        </xs:sequence>
-                                                    </xs:extension>
-                                                </xs:complexContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                        <xs:element minOccurs="0" name="PosteriorRandomEffects">
-                                            <xs:annotation>
-                                                <xs:documentation>Bayesian individual effects.</xs:documentation>
-                                            </xs:annotation>
-                                            <xs:complexType>
-                                                <xs:complexContent>
-                                                    <xs:extension base="ct:PharmMLRootType">
-                                                        <xs:sequence>
-                                                            <xs:element name="PosteriorEffectMean" minOccurs="0" type="ds:DataSetType"/>                                        
-                                                            <xs:element name="PosteriorEffectMedian" minOccurs="0" type="ds:DataSetType"/>                                        
-                                                            <xs:element name="PosteriorEffectMode" minOccurs="0" type="ds:DataSetType"/>                                        
-                                                        </xs:sequence>
-                                                    </xs:extension>
-                                                </xs:complexContent>
-                                            </xs:complexType>
-                                        </xs:element>
+                                        <xs:element name="EffectMean" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="EffectMedian" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="EffectMode" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>
                                     </xs:sequence>
                                 </xs:extension>
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
+                    <xs:element name="EtaShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
