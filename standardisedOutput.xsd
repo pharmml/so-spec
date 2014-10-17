@@ -21,10 +21,11 @@ permissions and limitations under the License.
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
     xmlns:distrib="http://www.uncertml.org/3.0"
-    xmlns:numl ="http://www.numl.org/numl/level1/version1"
     xmlns:ct="http://www.pharmml.org/2013/03/CommonTypes"
     xmlns:ds="http://www.pharmml.org/2013/08/Dataset"
     version="0.1">
+    
+    <!--    xmlns:numl ="http://www.numl.org/numl/level1/version1"-->
     
     <xs:import namespace="http://www.pharmml.org/2013/03/CommonTypes"
         schemaLocation="http://www.pharmml.org/2013/03/CommonTypes"/>
@@ -32,8 +33,8 @@ permissions and limitations under the License.
     <xs:import namespace="http://www.pharmml.org/2013/08/Dataset"
         schemaLocation="http://www.pharmml.org/2013/08/Dataset"/>
    
-    <xs:import namespace="http://www.numl.org/numl/level1/version1" 
-        schemaLocation="http://www.numl.org/numl/level1/version1"/>
+<!--    <xs:import namespace="http://www.numl.org/numl/level1/version1" 
+        schemaLocation="http://www.numl.org/numl/level1/version1"/>-->
     
     <xs:import namespace="http://www.uncertml.org/3.0" 
         schemaLocation="http://www.uncertml.org/3.0"/>    
