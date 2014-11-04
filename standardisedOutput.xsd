@@ -83,8 +83,8 @@ permissions and limitations under the License.
                     <xs:element minOccurs="0" name="ToolSettings" type="ds:ImportDataType"/>
                     <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                     <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
-<!--                    <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
-                    <xs:element minOccurs="0" name="SimulationExploration" type="so:SimulationExplorationType"/>
+                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>
+<!--                    <xs:element minOccurs="0" name="SimulationExploration" type="so:SimulationExplorationType"/>
                     <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                 </xs:sequence>
                 <xs:attributeGroup ref="ct:BlockDefnGroup"/>
@@ -153,6 +153,48 @@ permissions and limitations under the License.
                         <xs:annotation>
                             <xs:documentation>The messages from target tool</xs:documentation>
                         </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    
+    <xs:complexType name="ModelDiagnosticEvaluationType">
+        <xs:annotation>
+            <xs:documentation>Type defining the model diagnostic part of the SO.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
+                    <xs:element name="ModelDiagnostic">
+                        <xs:complexType>
+                            <xs:complexContent>
+                                <xs:extension base="ct:PharmMLRootType">
+                                    <xs:sequence>
+                                        <xs:element minOccurs="0" name="Plots" type="ds:DataSetType">
+                                            <xs:annotation>
+                                                <xs:documentation>Population and individual predictions in one table</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element minOccurs="0" name="AdjustmentTests" type="so:AdjustmentTestsType">
+                                            <xs:annotation>
+                                                <xs:documentation>The adjustment tests</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:extension>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ModelComparison">
+                        <xs:complexType>
+                            <xs:complexContent>
+                                <xs:extension base="ct:PharmMLRootType">
+                                    
+                                </xs:extension>
+                            </xs:complexContent>
+                        </xs:complexType>
                     </xs:element>
                 </xs:sequence>
             </xs:extension>
