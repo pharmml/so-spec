@@ -134,7 +134,7 @@ permissions and limitations under the License.
                             <xs:documentation>Precision of individual estimates</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element minOccurs="0" name="Residuals" type="so:ResidualsType">
+                    <xs:element minOccurs="0" name="Residuals" type="ds:DataSetType">
                         <xs:annotation>
                             <xs:documentation>The residuals</xs:documentation>
                         </xs:annotation>
@@ -439,25 +439,6 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
                     <xs:element name="PosteriorDistributionIndividualEstimates" minOccurs="0" type="so:SOTableDistribType"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    
-    <xs:complexType name="ResidualsType">
-        <xs:annotation>
-            <xs:documentation>Type defining the residuals.</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="RES" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="IRES" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="WRES" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="CWRES" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="IWRES" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="PD" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="NPDE" minOccurs="0" type="ds:DataSetType"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
