@@ -83,7 +83,7 @@ permissions and limitations under the License.
                     <xs:element minOccurs="0" name="ToolSettings" type="ds:ImportDataType"/>
                     <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                     <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
-                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>
+<!--                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>-->
 <!--                    <xs:element minOccurs="0" name="SimulationExploration" type="so:SimulationExplorationType"/>
                     <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                 </xs:sequence>
@@ -160,7 +160,7 @@ permissions and limitations under the License.
     </xs:complexType>
     
     
-    <xs:complexType name="ModelDiagnosticEvaluationType">
+<!--    <xs:complexType name="ModelDiagnosticEvaluationType">
         <xs:annotation>
             <xs:documentation>Type defining the model diagnostic part of the SO.</xs:documentation>
         </xs:annotation>
@@ -199,7 +199,7 @@ permissions and limitations under the License.
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
-    </xs:complexType>
+    </xs:complexType>-->
     
     <xs:complexType name="PharmMLRefType">
         <xs:annotation>
