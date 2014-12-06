@@ -352,27 +352,14 @@ permissions and limitations under the License.
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
-<!--                    <!-\- BOOSTRAP -\->
-                    <xs:element minOccurs="0" name="Bootstrap">
-                        <xs:annotation>
-                            <xs:documentation>
-                                Second level of the precision of the bootstrap population estimates.
-                            </xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:complexContent>
-                                <xs:extension base="ct:PharmMLRootType">
-                                    <xs:sequence>
-                                        <xs:element name="StandardDeviation" minOccurs="0" type="ds:DataSetType"/>
-                                        <xs:element name="ParameterDistribution" minOccurs="0" type="so:SOTableDistribType"/>
-                                        <xs:element name="PercentilesCI" minOccurs="0" type="ds:DataSetType"/>
-                                    </xs:sequence>
-                                </xs:extension>
-                            </xs:complexContent>
-                        </xs:complexType>
-                    </xs:element>-->
-                    <!-- Bootstrap -->
+                    <!-- BOOTSTRAP -->
                     <xs:element name="Bootstrap" minOccurs="0" type="ds:DataSetType"/>                                        
+                    <!-- LLP -->
+                    <xs:element name="LLP" minOccurs="0" type="ds:DataSetType"/>                                        
+                    <!-- SIR -->
+                    <xs:element name="SIR" minOccurs="0" type="ds:DataSetType"/>                                        
+                    <!-- MultiDimLLP -->
+                    <xs:element name="MultiDimLLP" minOccurs="0" type="ds:DataSetType"/>                                        
                     <!-- EtaShrinkage -->
                     <xs:element name="EtaShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
                     <!-- EpsShrinkage -->
