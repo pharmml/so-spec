@@ -371,6 +371,10 @@ permissions and limitations under the License.
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
+                    <!-- EtaShrinkage -->
+                    <xs:element name="EtaShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
+                    <!-- EpsShrinkage -->
+                    <xs:element name="EpsShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -425,7 +429,6 @@ permissions and limitations under the License.
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
-                    <xs:element name="EtaShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
