@@ -352,7 +352,7 @@ permissions and limitations under the License.
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
-                    <!-- BOOSTRAP -->
+<!--                    <!-\- BOOSTRAP -\->
                     <xs:element minOccurs="0" name="Bootstrap">
                         <xs:annotation>
                             <xs:documentation>
@@ -370,7 +370,9 @@ permissions and limitations under the License.
                                 </xs:extension>
                             </xs:complexContent>
                         </xs:complexType>
-                    </xs:element>
+                    </xs:element>-->
+                    <!-- Bootstrap -->
+                    <xs:element name="Bootstrap" minOccurs="0" type="ds:DataSetType"/>                                        
                     <!-- EtaShrinkage -->
                     <xs:element name="EtaShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
                     <!-- EpsShrinkage -->
