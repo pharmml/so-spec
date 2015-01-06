@@ -47,7 +47,7 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="PharmMLRef" type="so:PharmMLRefType">
+                    <xs:element name="PharmMLRef" minOccurs="0" type="so:PharmMLRefType">
                         <xs:annotation>
                             <xs:documentation>The path of the realted PharmML file.</xs:documentation>
                         </xs:annotation>
@@ -100,12 +100,24 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="RawFile" maxOccurs="unbounded" type="ds:ImportDataType"/>
+                    <xs:element name="DataFile" maxOccurs="unbounded" type="ds:ImportDataType"/>
+                    <xs:element name="GraphicsFile" maxOccurs="unbounded" type="ds:ImportDataType"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
     <!-- /TEST -->
+    
+<!--    <xs:complexType name="RawResultsType_B">
+        <xs:annotation>
+            <xs:documentation>Row Results Type</xs:documentation>
+        </xs:annotation>
+            <xs:all>
+                <xs:element name="DataFile" maxOccurs="unbounded" type="ds:ImportDataType"/>
+                <xs:element name="GraphicsFile" maxOccurs="unbounded" type="ds:ImportDataType"/>
+            </xs:all>
+        <xs:attributeGroup ref="ct:RootAttributesGroup"/>
+    </xs:complexType>-->    
     
     <xs:complexType name="EstimationType">
         <xs:annotation>
