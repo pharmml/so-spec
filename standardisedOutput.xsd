@@ -54,12 +54,14 @@ permissions and limitations under the License.
                     </xs:element>
                     <xs:choice>
                         <xs:element maxOccurs="unbounded" name="SOBlock" type="so:SOBlockType"/>
-                        <xs:sequence> <!-- must contain the same elements as the SOBlockType -->
+                        <xs:sequence> 
+                            <!-- must contain the same elements as in the SOBlockType -->
                             <xs:element minOccurs="0" name="ToolSettings" type="ds:ImportDataType"/>
                             <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
+                            <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                             <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
-                            <!--                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>-->
-                            <!--                    <xs:element minOccurs="0" name="SimulationExploration" type="so:SimulationExplorationType"/>
+<!--                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>-->
+<!--                    <xs:element minOccurs="0" name="SimulationExploration" type="so:SimulationExplorationType"/>
                     <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                         </xs:sequence>
                     </xs:choice>
@@ -90,8 +92,10 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
+                    <!-- must contain the same elements as in the SOType -->
                     <xs:element minOccurs="0" name="ToolSettings" type="ds:ImportDataType"/>
                     <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
+                    <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                     <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
 <!--                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>-->
 <!--                    <xs:element minOccurs="0" name="SimulationExploration" type="so:SimulationExplorationType"/>
@@ -128,6 +132,25 @@ permissions and limitations under the License.
             </xs:all>
         <xs:attributeGroup ref="ct:RootAttributesGroup"/>
     </xs:complexType>-->    
+    
+    <!-- TEST -->
+    <xs:complexType name="TaskInformationType">
+        <xs:annotation>
+            <xs:documentation>Type specifying task information.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
+<!--                    <xs:element name="Message" maxOccurs="unbounded" type="so:MessageType"/>               --> 
+                    <xs:element name="RunTime" type="ct:Rhs"/>
+                    <xs:element name="OutputFilePath" type="ds:ImportDataType"/>
+                    <xs:element name="NumberChains" type="ct:Rhs"/>             
+                    <xs:element name="NumberIterations" type="ct:Rhs"/>                    
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- /TEST -->
     
     <xs:complexType name="EstimationType">
         <xs:annotation>
