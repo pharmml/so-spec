@@ -52,7 +52,17 @@ permissions and limitations under the License.
                             <xs:documentation>The path of the realted PharmML file.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element maxOccurs="unbounded" name="SOBlock" type="so:SOBlockType"/>
+                    <xs:choice>
+                        <xs:element maxOccurs="unbounded" name="SOBlock" type="so:SOBlockType"/>
+                        <xs:sequence> <!-- must contain the same elements as the SOBlockType -->
+                            <xs:element minOccurs="0" name="ToolSettings" type="ds:ImportDataType"/>
+                            <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
+                            <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
+                            <!--                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>-->
+                            <!--                    <xs:element minOccurs="0" name="SimulationExploration" type="so:SimulationExplorationType"/>
+                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
+                        </xs:sequence>
+                    </xs:choice>
                 </xs:sequence>
                 <xs:attribute name="writtenVersion" type="xs:string" use="required">
                     <xs:annotation>
@@ -365,13 +375,13 @@ permissions and limitations under the License.
                         </xs:complexType>
                     </xs:element>
                     <!-- BOOTSTRAP -->
-                    <xs:element name="Bootstrap" minOccurs="0" type="ds:DataSetType"/>                                        
+                    <xs:element name="Bootstrap" minOccurs="0" type="so:PrecisionEstimatesPercentileType"/>                                        
                     <!-- LLP -->
-                    <xs:element name="LLP" minOccurs="0" type="ds:DataSetType"/>                                        
+                    <xs:element name="LLP" minOccurs="0" type="so:PrecisionEstimatesPercentileType"/>                                        
                     <!-- SIR -->
-                    <xs:element name="SIR" minOccurs="0" type="ds:DataSetType"/>                                        
+                    <xs:element name="SIR" minOccurs="0" type="so:PrecisionEstimatesPercentileType"/>                                        
                     <!-- MultiDimLLP -->
-                    <xs:element name="MultiDimLLP" minOccurs="0" type="ds:DataSetType"/>                                        
+                    <xs:element name="MultiDimLLP" minOccurs="0" type="so:PrecisionEstimatesPercentileType"/>                                        
                     <!-- EtaShrinkage -->
                     <xs:element name="EtaShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
                     <!-- EpsShrinkage -->
@@ -381,6 +391,21 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
+    <!-- TEST -->
+    <xs:complexType name="PrecisionEstimatesPercentileType">
+        <xs:annotation>
+            <xs:documentation>Combined type for other population estimates</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
+                    <xs:element name="PrecisionEstimates" type="ds:DataSetType"/>
+                    <xs:element name="Percentiles" type="ds:DataSetType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- /TEST -->
     
     <!-- Types for Individual Estimates -->
     <xs:complexType name="IndividualEstimatesType">
