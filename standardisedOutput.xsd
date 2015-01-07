@@ -60,9 +60,9 @@ permissions and limitations under the License.
                             <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                             <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                             <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
-<!--                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>-->
-<!--                    <xs:element minOccurs="0" name="SimulationExploration" type="so:SimulationExplorationType"/>
-                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
+                            <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
+                            <!--                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>-->
+                            <!--                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                         </xs:sequence>
                     </xs:choice>
                 </xs:sequence>
@@ -97,9 +97,9 @@ permissions and limitations under the License.
                     <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                     <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                     <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
-<!--                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>-->
-<!--                    <xs:element minOccurs="0" name="SimulationExploration" type="so:SimulationExplorationType"/>
-                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
+                    <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
+                    <!--                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>-->
+                    <!--                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                 </xs:sequence>
                 <xs:attributeGroup ref="ct:BlockDefnGroup"/>
             </xs:extension>
@@ -180,7 +180,7 @@ permissions and limitations under the License.
     
     <xs:complexType name="EstimationType">
         <xs:annotation>
-            <xs:documentation>Type defining the estimation part of the SO.</xs:documentation>
+            <xs:documentation>Type defining the estimation section of the SO.</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
@@ -574,6 +574,21 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
+    <xs:complexType name="SimulationType">
+        <xs:annotation>
+            <xs:documentation>Type for the simulation section of the SO.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
+                    <xs:element name="SimulatedProfiles" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="IndivParametersCovariates" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="PopulationParametersCovariates" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="OriginalDataset" minOccurs="0" type="ds:ImportDataType"/>                    
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 
     <!-- elements -->
     <xs:element name="SO" type="so:SOType">
