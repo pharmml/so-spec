@@ -164,13 +164,13 @@ permissions and limitations under the License.
                     <xs:element name="Content" type="ct:Rhs"/>
                     <xs:element name="Severity" type="ct:Rhs"/>
                 </xs:sequence>
-                <xs:attribute name="type">
+                <xs:attribute use="required" name="type">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="ERROR"/>
                             <xs:enumeration value="WARNING"/>
                             <xs:enumeration value="TERMINATION"/>
-                            <xs:enumeration value="INFROMATION"/>
+                            <xs:enumeration value="INFORMATION"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
