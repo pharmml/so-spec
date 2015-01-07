@@ -141,7 +141,7 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-<!--                    <xs:element name="Message" maxOccurs="unbounded" type="so:MessageType"/>               --> 
+                    <xs:element name="Message" maxOccurs="unbounded" type="so:MessageType"/>
                     <xs:element name="RunTime" type="ct:Rhs"/>
                     <xs:element name="OutputFilePath" type="ds:ImportDataType"/>
                     <xs:element name="NumberChains" type="ct:Rhs"/>             
@@ -151,6 +151,32 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     <!-- /TEST -->
+    
+    <xs:complexType name="MessageType">
+        <xs:annotation>
+            <xs:documentation>Basic messages type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
+                    <xs:element name="Toolname" type="ct:Rhs"/>
+                    <xs:element name="Name" type="ct:Rhs"/>
+                    <xs:element name="Content" type="ct:Rhs"/>
+                    <xs:element name="Severity" type="ct:Rhs"/>
+                </xs:sequence>
+                <xs:attribute name="type">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="ERROR"/>
+                            <xs:enumeration value="WARNING"/>
+                            <xs:enumeration value="TERMINATION"/>
+                            <xs:enumeration value="INFROMATION"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
     
     <xs:complexType name="EstimationType">
         <xs:annotation>
