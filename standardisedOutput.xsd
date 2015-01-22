@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright 2013 European Molecular Biology Laboratory, Heidelberg,
+Copyright 2013-2015 European Molecular Biology Laboratory, Heidelberg,
 Germany and Novo Nordisk A/S, Bagsvaerd, Denmark.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you
@@ -61,7 +61,7 @@ permissions and limitations under the License.
                             <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                             <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
                             <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
-                            <!--                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>-->
+                            <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
                             <!--                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                         </xs:sequence>
                     </xs:choice>
@@ -98,7 +98,7 @@ permissions and limitations under the License.
                     <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                     <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
                     <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
-                    <!--                    <xs:element minOccurs="0" name="DiagnosticEvaluation" type="so:ModelDiagnosticEvaluationType"/>-->
+                    <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
                     <!--                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                 </xs:sequence>
                 <xs:attributeGroup ref="ct:BlockDefnGroup"/>
@@ -229,48 +229,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
-    
-<!--    <xs:complexType name="ModelDiagnosticEvaluationType">
-        <xs:annotation>
-            <xs:documentation>Type defining the model diagnostic part of the SO.</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="ModelDiagnostic">
-                        <xs:complexType>
-                            <xs:complexContent>
-                                <xs:extension base="ct:PharmMLRootType">
-                                    <xs:sequence>
-                                        <xs:element minOccurs="0" name="Plots" type="ds:DataSetType">
-                                            <xs:annotation>
-                                                <xs:documentation>Population and individual predictions in one table</xs:documentation>
-                                            </xs:annotation>
-                                        </xs:element>
-                                        <xs:element minOccurs="0" name="AdjustmentTests" type="so:AdjustmentTestsType">
-                                            <xs:annotation>
-                                                <xs:documentation>The adjustment tests</xs:documentation>
-                                            </xs:annotation>
-                                        </xs:element>
-                                    </xs:sequence>
-                                </xs:extension>
-                            </xs:complexContent>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="ModelComparison">
-                        <xs:complexType>
-                            <xs:complexContent>
-                                <xs:extension base="ct:PharmMLRootType">
-                                    
-                                </xs:extension>
-                            </xs:complexContent>
-                        </xs:complexType>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>-->
     
     <xs:complexType name="PharmMLRefType">
         <xs:annotation>
@@ -638,6 +596,18 @@ permissions and limitations under the License.
     </xs:complexType>
     <!-- /TEST -->
     
+    <!-- TEST -->
+    <xs:complexType name="ModelDiagnosticType">
+        <xs:annotation>
+            <xs:documentation>Type for the model diagnostic</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- /TEST -->
     
 
     <!-- elements -->
