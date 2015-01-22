@@ -574,7 +574,8 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-    <xs:complexType name="SimulationType">
+<!--  ORIGINAL
+        <xs:complexType name="SimulationType">
         <xs:annotation>
             <xs:documentation>Type for the simulation section of the SO.</xs:documentation>
         </xs:annotation>
@@ -588,7 +589,56 @@ permissions and limitations under the License.
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
+    </xs:complexType>-->
+    
+    <!-- TEST -->
+    <xs:complexType name="SimulationType">
+        <xs:annotation>
+            <xs:documentation>Type for the simulation section of the SO.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
+                    <xs:element name="OriginalDataset" type="ds:ExternalFileType"/>
+                    <xs:choice>
+                        <xs:element maxOccurs="unbounded" name="SimulationBlock" type="so:SimulationBlockType"/>
+                        <xs:sequence> 
+                            <xs:element name="SimulatedProfiles" minOccurs="0" type="ds:DataSetType"/>
+                            <xs:element name="IndivParameters" minOccurs="0" type="ds:DataSetType"/>
+                            <xs:element name="Covariates" minOccurs="0" type="ds:DataSetType"/>
+                            <xs:element name="PopulationParameters" minOccurs="0" type="ds:DataSetType"/>
+                            <xs:element name="Dosing" minOccurs="0" type="ds:DataSetType"/>
+                            <xs:element name="RawResultsFile" minOccurs="0" type="ds:ExternalFileType"/>
+                        </xs:sequence>
+                    </xs:choice>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
     </xs:complexType>
+    <!-- /TEST -->
+    
+    <!-- TEST -->
+    <xs:complexType name="SimulationBlockType">
+        <xs:annotation>
+            <xs:documentation>Type for the simulation block for on ereplicate.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence> 
+                    <xs:element name="SimulatedProfiles" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="IndivParameters" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="Covariates" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="PopulationParameters" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="Dosing" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="RawResultsFile" minOccurs="0" type="ds:ExternalFileType"/>
+                </xs:sequence>
+                <xs:attribute name="replicate" type="xs:integer"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- /TEST -->
+    
+    
 
     <!-- elements -->
     <xs:element name="SO" type="so:SOType">
