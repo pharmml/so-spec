@@ -603,7 +603,43 @@ permissions and limitations under the License.
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
-                
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="DiagnosticPlotsStructuralModel" type="so:DiagnosticPlotsStructuralModelType"/>
+                    <xs:element minOccurs="0" name="DiagnosticPlotsIndividualParams" type="ds:DataSetType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- /TEST -->
+    
+    <!-- TEST -->
+    <xs:complexType name="DiagnosticPlotsStructuralModelType">
+        <xs:annotation>
+            <xs:documentation>Type for diagnostic pLots for the structural model</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
+                    <xs:element name="IndivFits" type="so:IndivFits"/>
+                    <xs:element name="IndivPredictionVsObserv" type="ds:DataSetType"/>
+                    <xs:element name="VPC" type="ds:DataSetType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- /TETS -->
+    
+    <!-- TEST -->
+    <xs:complexType name="IndivFits">
+        <xs:annotation>
+            <xs:documentation>Type for indivitual fits</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
+                    <xs:element name="Table1" type="ds:DataSetType"/>
+                    <xs:element name="Table2" type="ds:DataSetType"/>
+                </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
