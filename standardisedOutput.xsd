@@ -16,22 +16,22 @@ implied. See the License for the specific language governing
 permissions and limitations under the License.
 -->    
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://www.pharmml.org/2013/03/StandardisedOutput"
-    xmlns:so="http://www.pharmml.org/2013/03/StandardisedOutput"
+    targetNamespace="http://www.pharmml.org/so/0.1/StandardisedOutput"
+    xmlns:so="http://www.pharmml.org/so/0.1/StandardisedOutput"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
     xmlns:distrib="http://www.uncertml.org/3.0"
-    xmlns:ct="http://www.pharmml.org/2013/03/CommonTypes"
-    xmlns:ds="http://www.pharmml.org/2013/08/Dataset"
+    xmlns:ct="http://www.pharmml.org/pharmml/0.6/CommonTypes"
+    xmlns:ds="http://www.pharmml.org/pharmml/0.6/Dataset"
     version="0.1">
     
     <!--    xmlns:numl ="http://www.numl.org/numl/level1/version1"-->
     
-    <xs:import namespace="http://www.pharmml.org/2013/03/CommonTypes"
-        schemaLocation="http://www.pharmml.org/2013/03/CommonTypes"/>
+    <xs:import namespace="http://www.pharmml.org/pharmml/0.6/CommonTypes"
+        schemaLocation="http://www.pharmml.org/pharmml/0.6/CommonTypes"/>
     
-    <xs:import namespace="http://www.pharmml.org/2013/08/Dataset"
-        schemaLocation="http://www.pharmml.org/2013/08/Dataset"/>
+    <xs:import namespace="http://www.pharmml.org/pharmml/0.6/Dataset"
+        schemaLocation="http://www.pharmml.org/pharmml/0.6/Dataset"/>
    
 <!--    <xs:import namespace="http://www.numl.org/numl/level1/version1" 
         schemaLocation="http://www.numl.org/numl/level1/version1"/>-->
@@ -56,7 +56,7 @@ permissions and limitations under the License.
                         <xs:element maxOccurs="unbounded" name="SOBlock" type="so:SOBlockType"/>
                         <xs:sequence> 
                             <!-- must contain the same elements as in the SOBlockType -->
-                            <xs:element minOccurs="0" name="ToolSettings" type="ds:ImportDataType"/>
+                            <xs:element minOccurs="0" name="ToolSettings" type="ds:ExternalFileType"/>
                             <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                             <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                             <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
@@ -93,7 +93,7 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
                     <!-- must contain the same elements as in the SOType -->
-                    <xs:element minOccurs="0" name="ToolSettings" type="ds:ImportDataType"/>
+                    <xs:element minOccurs="0" name="ToolSettings" type="ds:ExternalFileType"/>
                     <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                     <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                     <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
@@ -114,8 +114,8 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="DataFile" maxOccurs="unbounded" type="ds:ImportDataType"/>
-                    <xs:element name="GraphicsFile" maxOccurs="unbounded" type="ds:ImportDataType"/>
+                    <xs:element name="DataFile" maxOccurs="unbounded" type="ds:ExternalFileType"/>
+                    <xs:element name="GraphicsFile" maxOccurs="unbounded" type="ds:ExternalFileType"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -127,8 +127,8 @@ permissions and limitations under the License.
             <xs:documentation>Row Results Type</xs:documentation>
         </xs:annotation>
             <xs:all>
-                <xs:element name="DataFile" maxOccurs="unbounded" type="ds:ImportDataType"/>
-                <xs:element name="GraphicsFile" maxOccurs="unbounded" type="ds:ImportDataType"/>
+                <xs:element name="DataFile" maxOccurs="unbounded" type="ds:ExternalFileType"/>
+                <xs:element name="GraphicsFile" maxOccurs="unbounded" type="ds:ExternalFileType"/>
             </xs:all>
         <xs:attributeGroup ref="ct:RootAttributesGroup"/>
     </xs:complexType>-->    
@@ -142,7 +142,7 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
                     <xs:element name="Message" maxOccurs="unbounded" type="so:MessageType"/>
-                    <xs:element name="OutputFilePath" minOccurs="0" type="ds:ImportDataType"/>
+                    <xs:element name="OutputFilePath" minOccurs="0" type="ds:ExternalFileType"/>
                     <xs:element name="RunTime" minOccurs="0" type="ct:Rhs"/>
                     <xs:element name="NumberChains" minOccurs="0" type="ct:Rhs"/>             
                     <xs:element name="NumberIterations" minOccurs="0" type="ct:Rhs"/>                    
@@ -566,7 +566,7 @@ permissions and limitations under the License.
                     <xs:element name="Warnings" minOccurs="0" type="ct:StringValueType"/>
                     <xs:element name="Errors" minOccurs="0" type="ct:StringValueType"/>
                     <xs:element name="ElapsedTime" minOccurs="0" type="ct:RealValueType"/>
-                    <xs:element name="OutputFilePath" minOccurs="0" type="ds:ImportDataType"/>
+                    <xs:element name="OutputFilePath" minOccurs="0" type="ds:ExternalFileType"/>
                     <xs:element name="ChainsNumber" minOccurs="0" type="ct:RealValueType"/>
                     <xs:element name="IterationNumber" minOccurs="0" type="ct:RealValueType"/>
                 </xs:sequence>
@@ -584,7 +584,7 @@ permissions and limitations under the License.
                     <xs:element name="SimulatedProfiles" minOccurs="0" type="ds:DataSetType"/>
                     <xs:element name="IndivParametersCovariates" minOccurs="0" type="ds:DataSetType"/>
                     <xs:element name="PopulationParametersCovariates" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="OriginalDataset" minOccurs="0" type="ds:ImportDataType"/>                    
+                    <xs:element name="OriginalDataset" minOccurs="0" type="ds:ExternalFileType"/>                    
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
