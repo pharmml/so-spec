@@ -2,3 +2,10 @@ ChangeLog
 
 17 Oct 2014
 First draft of the SO spec - Estimation part only
+
+7 Jan 2014
+- extensions in all sections
+- extended <RawResults>, new <TaskInformation>
+- new URI, .../so/x.y/... with x - major version, y - minorVersion
+
+

@@ -1,9 +1,9 @@
 
-==============================================
+======================================================
 
-Specification for SO: Standardised Output for PharmML 
+Specification for SO: Standardised Output for PharmML, version 0.1
 
-==============================================
+======================================================
 
 README.md - this file
 
