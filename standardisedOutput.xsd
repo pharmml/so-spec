@@ -60,8 +60,8 @@ permissions and limitations under the License.
                             <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                             <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                             <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
-                            <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
                             <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
+                            <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
                             <!--                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                         </xs:sequence>
                     </xs:choice>
@@ -97,8 +97,8 @@ permissions and limitations under the License.
                     <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                     <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                     <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
-                    <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
                     <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
+                    <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
                     <!--                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                 </xs:sequence>
                 <xs:attributeGroup ref="ct:BlockDefnGroup"/>
