@@ -650,8 +650,8 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="Table1" type="ds:DataSetType"/>
-                    <xs:element name="Table2" type="ds:DataSetType"/>
+                    <xs:element name="ObservationTable" type="ds:DataSetType"/>
+                    <xs:element name="PredictionTable" type="ds:DataSetType"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
