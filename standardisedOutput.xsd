@@ -141,7 +141,7 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="Message" maxOccurs="unbounded" type="so:MessageType"/>
+                    <xs:element name="Message" minOccurs="0" maxOccurs="unbounded" type="so:MessageType"/>
                     <xs:element name="OutputFilePath" minOccurs="0" type="ds:ExternalFileType"/>
                     <xs:element name="RunTime" minOccurs="0" type="ct:Rhs"/>
                     <xs:element name="NumberChains" minOccurs="0" type="ct:Rhs"/>             
@@ -633,9 +633,9 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="IndivFits" type="so:IndivFits"/>
-                    <xs:element name="IndivPredictionVsObserv" type="ds:DataSetType"/>
-                    <xs:element name="VPC" type="ds:DataSetType"/>
+                    <xs:element name="IndivFits" minOccurs="0" type="so:IndivFits"/>
+                    <xs:element name="IndivPredictionVsObserv" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="VPC" minOccurs="0" type="ds:DataSetType"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -650,8 +650,8 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="ObservationTable" type="ds:DataSetType"/>
-                    <xs:element name="PredictionTable" type="ds:DataSetType"/>
+                    <xs:element name="ObservationTable" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="PredictionTable" minOccurs="0" type="ds:DataSetType"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
