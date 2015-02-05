@@ -114,8 +114,8 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="DataFile" maxOccurs="unbounded" type="ds:ExternalFileType"/>
-                    <xs:element name="GraphicsFile" maxOccurs="unbounded" type="ds:ExternalFileType"/>
+                    <xs:element name="DataFile" minOccurs="0" maxOccurs="unbounded" type="ds:ExternalFileType"/>
+                    <xs:element name="GraphicsFile" minOccurs="0" maxOccurs="unbounded" type="ds:ExternalFileType"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -568,7 +568,7 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="OriginalDataset" type="ds:ExternalFileType"/>
+                    <xs:element name="OriginalDataset" minOccurs="0" type="ds:ExternalFileType"/>
                     <xs:choice>
                         <xs:element maxOccurs="unbounded" name="SimulationBlock" type="so:SimulationBlockType"/>
                         <xs:sequence> 
