@@ -113,25 +113,16 @@ permissions and limitations under the License.
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="DataFile" minOccurs="0" maxOccurs="unbounded" type="ds:ExternalFileType"/>
-                    <xs:element name="GraphicsFile" minOccurs="0" maxOccurs="unbounded" type="ds:ExternalFileType"/>
-                </xs:sequence>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:sequence>
+                        <xs:element name="DataFile" minOccurs="0" maxOccurs="unbounded" type="ds:ExternalFileType"/>
+                        <xs:element name="GraphicsFile" minOccurs="0" maxOccurs="unbounded" type="ds:ExternalFileType"/>
+                    </xs:sequence>
+                </xs:choice>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
     <!-- /TEST -->
-    
-<!--    <xs:complexType name="RawResultsType_B">
-        <xs:annotation>
-            <xs:documentation>Row Results Type</xs:documentation>
-        </xs:annotation>
-            <xs:all>
-                <xs:element name="DataFile" maxOccurs="unbounded" type="ds:ExternalFileType"/>
-                <xs:element name="GraphicsFile" maxOccurs="unbounded" type="ds:ExternalFileType"/>
-            </xs:all>
-        <xs:attributeGroup ref="ct:RootAttributesGroup"/>
-    </xs:complexType>-->    
     
     <!-- TEST -->
     <xs:complexType name="TaskInformationType">
@@ -211,12 +202,12 @@ permissions and limitations under the License.
                             <xs:documentation>Individual estimates</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element minOccurs="0" name="PrecisionIndividualEstimates" type="so:PrecisionIndividualEstimatesType">
+                    <xs:element minOccurs="0" name="PrecisionIndividualEstimates" type="so:SOTableDistribType">
                         <xs:annotation>
                             <xs:documentation>Precision of individual estimates</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element minOccurs="0" name="Residuals" type="ds:DataSetType">
+                    <xs:element minOccurs="0" name="Residual" type="so:ResidualType">
                         <xs:annotation>
                             <xs:documentation>The residuals</xs:documentation>
                         </xs:annotation>
@@ -361,14 +352,16 @@ permissions and limitations under the License.
                         <xs:complexType>
                             <xs:complexContent>
                                 <xs:extension base="ct:PharmMLRootType">
-                                    <xs:sequence>
-                                        <xs:element name="FIM" minOccurs="0" type="so:SOMatrixType"/>
-                                        <xs:element name="CovarianceMatrix" minOccurs="0" type="so:SOMatrixType"/>
-                                        <xs:element name="CorrelationMatrix" minOccurs="0" type="so:SOMatrixType"/>
-                                        <xs:element name="StandardError" minOccurs="0" type="ds:DataSetType"/>
-                                        <xs:element name="RelativeStandardError" minOccurs="0" type="ds:DataSetType"/>
-                                        <xs:element name="AsymptoticCI" minOccurs="0" type="ds:DataSetType"/>
-                                    </xs:sequence>
+                                    <xs:choice maxOccurs="unbounded">
+                                        <xs:sequence>
+                                            <xs:element name="FIM" minOccurs="0" type="so:SOMatrixType"/>
+                                            <xs:element name="CovarianceMatrix" minOccurs="0" type="so:SOMatrixType"/>
+                                            <xs:element name="CorrelationMatrix" minOccurs="0" type="so:SOMatrixType"/>
+                                            <xs:element name="StandardError" minOccurs="0" type="ds:DataSetType"/>
+                                            <xs:element name="RelativeStandardError" minOccurs="0" type="ds:DataSetType"/>
+                                            <xs:element name="AsymptoticCI" minOccurs="0" type="ds:DataSetType"/>
+                                        </xs:sequence>
+                                    </xs:choice>
                                 </xs:extension>
                             </xs:complexContent>
                         </xs:complexType>
@@ -400,14 +393,26 @@ permissions and limitations under the License.
                     <xs:element name="SIR" minOccurs="0" type="so:PrecisionEstimatesPercentileType"/>                                        
                     <!-- MultiDimLLP -->
                     <xs:element name="MultiDimLLP" minOccurs="0" type="so:PrecisionEstimatesPercentileType"/>                                        
-                    <!-- EtaShrinkage -->
-                    <xs:element name="EtaShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
-                    <!-- EpsShrinkage -->
-                    <xs:element name="EpsShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
+    
+    <!-- TEST -->
+    <xs:complexType name="ResidualType">
+        <xs:annotation>
+            <xs:documentation>Type for residuals</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
+                    <xs:element name="Residuals" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="EpsShrinkage" minOccurs="0" type="ds:DataSetType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- /TEST -->
     
     <!-- TEST -->
     <xs:complexType name="PrecisionEstimatesPercentileType">
@@ -443,12 +448,14 @@ permissions and limitations under the License.
                         <xs:complexType>
                             <xs:complexContent>
                                 <xs:extension base="ct:PharmMLRootType">
-                                    <xs:sequence>
-                                        <xs:element name="Mean" minOccurs="0" type="ds:DataSetType"/>
-                                        <xs:element name="Median" minOccurs="0" type="ds:DataSetType"/>
-                                        <xs:element name="Mode" minOccurs="0" type="ds:DataSetType"/>
-                                        <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>
-                                    </xs:sequence>
+                                    <xs:choice maxOccurs="unbounded">
+                                        <xs:sequence>
+                                            <xs:element name="Mean" minOccurs="0" type="ds:DataSetType"/>
+                                            <xs:element name="Median" minOccurs="0" type="ds:DataSetType"/>
+                                            <xs:element name="Mode" minOccurs="0" type="ds:DataSetType"/>
+                                            <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>
+                                        </xs:sequence>
+                                    </xs:choice>
                                 </xs:extension>
                             </xs:complexContent>
                         </xs:complexType>
@@ -463,22 +470,27 @@ permissions and limitations under the License.
                         <xs:complexType>
                             <xs:complexContent>
                                 <xs:extension base="ct:PharmMLRootType">
-                                    <xs:sequence>
-                                        <xs:element name="EffectMean" minOccurs="0" type="ds:DataSetType"/>
-                                        <xs:element name="EffectMedian" minOccurs="0" type="ds:DataSetType"/>
-                                        <xs:element name="EffectMode" minOccurs="0" type="ds:DataSetType"/>
-                                        <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>
-                                    </xs:sequence>
+                                    <xs:choice maxOccurs="unbounded">
+                                        <xs:sequence>
+                                            <xs:element name="EffectMean" minOccurs="0" type="ds:DataSetType"/>
+                                            <xs:element name="EffectMedian" minOccurs="0" type="ds:DataSetType"/>
+                                            <xs:element name="EffectMode" minOccurs="0" type="ds:DataSetType"/>
+                                            <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>
+                                        </xs:sequence>
+                                    </xs:choice>
                                 </xs:extension>
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
+                    <!-- EtaShrinkage -->
+                    <xs:element name="EtaShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
     
-    <xs:complexType name="PrecisionIndividualEstimatesType">
+<!-- REMOVAL CANDIDATE
+        <xs:complexType name="PrecisionIndividualEstimatesType">
         <xs:annotation>
             <xs:documentation>Type defining the precision individual estimates.</xs:documentation>
         </xs:annotation>
@@ -489,8 +501,7 @@ permissions and limitations under the License.
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
-    </xs:complexType>
-    
+    </xs:complexType> -->    
     
     <xs:complexType name="LikelihoodType">
         <xs:annotation>
@@ -498,13 +509,15 @@ permissions and limitations under the License.
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="LogLikelihood" minOccurs="0" type="ct:RealValueType"/>
-                    <xs:element name="Deviance" minOccurs="0" type="ct:RealValueType"/>
-<!--                    <xs:element name="OFV" minOccurs="0" type="ct:RealValueType"/>-->
-                    <xs:element name="IndividualContribToLL" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="InformationCriteria" minOccurs="0" type="so:InformationCriteriaType"/>
-                </xs:sequence>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:sequence>
+                        <xs:element name="LogLikelihood" minOccurs="0" type="ct:RealValueType"/>
+                        <xs:element name="Deviance" minOccurs="0" type="ct:RealValueType"/>
+                        <!--                    <xs:element name="OFV" minOccurs="0" type="ct:RealValueType"/>-->
+                        <xs:element name="IndividualContribToLL" minOccurs="0" type="ds:DataSetType"/>
+                        <xs:element name="InformationCriteria" minOccurs="0" type="so:InformationCriteriaType"/>
+                    </xs:sequence>
+                </xs:choice>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -515,11 +528,13 @@ permissions and limitations under the License.
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="AIC" minOccurs="0" type="ct:RealValueType"/>
-                    <xs:element name="BIC" minOccurs="0" type="ct:RealValueType"/>
-                    <xs:element name="DIC" minOccurs="0" type="ct:RealValueType"/>                        
-                </xs:sequence>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:sequence>
+                        <xs:element name="AIC" minOccurs="0" type="ct:RealValueType"/>
+                        <xs:element name="BIC" minOccurs="0" type="ct:RealValueType"/>
+                        <xs:element name="DIC" minOccurs="0" type="ct:RealValueType"/>                        
+                    </xs:sequence>
+                </xs:choice>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -530,15 +545,17 @@ permissions and limitations under the License.
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="Termination" minOccurs="0" type="ct:StringValueType"/>
-                    <xs:element name="Warnings" minOccurs="0" type="ct:StringValueType"/>
-                    <xs:element name="Errors" minOccurs="0" type="ct:StringValueType"/>
-                    <xs:element name="ElapsedTime" minOccurs="0" type="ct:RealValueType"/>
-                    <xs:element name="OutputFilePath" minOccurs="0" type="ds:ExternalFileType"/>
-                    <xs:element name="ChainsNumber" minOccurs="0" type="ct:RealValueType"/>
-                    <xs:element name="IterationNumber" minOccurs="0" type="ct:RealValueType"/>
-                </xs:sequence>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:sequence>
+                        <xs:element name="Termination" minOccurs="0" type="ct:StringValueType"/>
+                        <xs:element name="Warnings" minOccurs="0" type="ct:StringValueType"/>
+                        <xs:element name="Errors" minOccurs="0" type="ct:StringValueType"/>
+                        <xs:element name="ElapsedTime" minOccurs="0" type="ct:RealValueType"/>
+                        <xs:element name="OutputFilePath" minOccurs="0" type="ds:ExternalFileType"/>
+                        <xs:element name="ChainsNumber" minOccurs="0" type="ct:RealValueType"/>
+                        <xs:element name="IterationNumber" minOccurs="0" type="ct:RealValueType"/>
+                    </xs:sequence>
+                </xs:choice>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -616,10 +633,12 @@ permissions and limitations under the License.
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="DiagnosticPlotsStructuralModel" type="so:DiagnosticPlotsStructuralModelType"/>
-                    <xs:element minOccurs="0" name="DiagnosticPlotsIndividualParams" type="ds:DataSetType"/>
-                </xs:sequence>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="DiagnosticPlotsStructuralModel" type="so:DiagnosticPlotsStructuralModelType"/>
+                        <xs:element minOccurs="0" name="DiagnosticPlotsIndividualParams" type="ds:DataSetType"/>
+                    </xs:sequence>
+                </xs:choice>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -632,11 +651,13 @@ permissions and limitations under the License.
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="IndivFits" minOccurs="0" type="so:IndivFits"/>
-                    <xs:element name="IndivPredictionVsObserv" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="VPC" minOccurs="0" type="ds:DataSetType"/>
-                </xs:sequence>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:sequence>
+                        <xs:element name="IndivFits" minOccurs="0" type="so:IndivFits"/>
+                        <xs:element name="IndivPredictionVsObserv" minOccurs="0" type="ds:DataSetType"/>
+                        <xs:element name="VPC" minOccurs="0" type="ds:DataSetType"/>
+                    </xs:sequence>
+                </xs:choice>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -649,10 +670,12 @@ permissions and limitations under the License.
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="ObservationTable" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="PredictionTable" minOccurs="0" type="ds:DataSetType"/>
-                </xs:sequence>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:sequence>
+                        <xs:element name="ObservationTable" minOccurs="0" type="ds:DataSetType"/>
+                        <xs:element name="PredictionTable" minOccurs="0" type="ds:DataSetType"/>
+                    </xs:sequence>
+                </xs:choice>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
