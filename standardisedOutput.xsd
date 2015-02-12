@@ -406,7 +406,7 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="Residuals" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="ResidualTable" minOccurs="0" type="ds:DataSetType"/>
                     <xs:element name="EpsShrinkage" minOccurs="0" type="ds:DataSetType"/>
                 </xs:sequence>
             </xs:extension>
