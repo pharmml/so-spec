@@ -22,10 +22,6 @@
     <system
         systemId="http://www.uncertml.org/3.0" 
         uri="../pharmml-spec/uncertweb/UncertML30.xsd"/>
-    
-    <!-- numl -->
-    <system systemId="http://www.numl.org/numl/level1/version1" 
-        uri="../pharmml-spec/numl/NUMLSchema.xsd"/>
 
 </catalog>
 

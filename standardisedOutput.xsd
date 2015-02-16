@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright 2013-2015 European Molecular Biology Laboratory, Heidelberg,
+Copyright 2014-2015 European Molecular Biology Laboratory, Heidelberg,
 Germany and Merck Institute for Pharmacometrics, Merck Serono, Lausanne, Switzerland.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you
@@ -25,17 +25,12 @@ permissions and limitations under the License.
     xmlns:ds="http://www.pharmml.org/pharmml/0.6/Dataset"
     version="0.1">
     
-    <!--    xmlns:numl ="http://www.numl.org/numl/level1/version1"-->
-    
     <xs:import namespace="http://www.pharmml.org/pharmml/0.6/CommonTypes"
         schemaLocation="http://www.pharmml.org/pharmml/0.6/CommonTypes"/>
     
     <xs:import namespace="http://www.pharmml.org/pharmml/0.6/Dataset"
         schemaLocation="http://www.pharmml.org/pharmml/0.6/Dataset"/>
    
-<!--    <xs:import namespace="http://www.numl.org/numl/level1/version1" 
-        schemaLocation="http://www.numl.org/numl/level1/version1"/>-->
-    
     <xs:import namespace="http://www.uncertml.org/3.0" 
         schemaLocation="http://www.uncertml.org/3.0"/>    
     
@@ -62,7 +57,7 @@ permissions and limitations under the License.
                             <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
                             <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
                             <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
-                            <!--                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
+                            <!--   TODO <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                         </xs:sequence>
                     </xs:choice>
                 </xs:sequence>
@@ -99,14 +94,13 @@ permissions and limitations under the License.
                     <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
                     <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
                     <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
-                    <!--                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
+                    <!--   TODO xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
                 </xs:sequence>
                 <xs:attributeGroup ref="ct:BlockDefnGroup"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
 
-    <!-- TEST -->
     <xs:complexType name="RawResultsType">
         <xs:annotation>
             <xs:documentation>Row Results Type</xs:documentation>
@@ -122,9 +116,7 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
     
-    <!-- TEST -->
     <xs:complexType name="TaskInformationType">
         <xs:annotation>
             <xs:documentation>Type specifying task information.</xs:documentation>
@@ -141,7 +133,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
     
     <xs:complexType name="MessageType">
         <xs:annotation>
@@ -168,17 +159,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
-<!--  TESTING
-        <xs:simpleType name="SeverityType">
-        <xs:annotation>
-            <xs:documentation>Type definign the severity 1:10 definition.</xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:integer">
-            <xs:minInclusive value="1"/>
-            <xs:maxInclusive value="10"/>
-        </xs:restriction>
-    </xs:simpleType>-->
     
     <xs:complexType name="EstimationType">
         <xs:annotation>
@@ -294,7 +274,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
     
     <xs:complexType name="PopulationEstimatesType">
         <xs:annotation>
@@ -398,7 +377,6 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-    <!-- TEST -->
     <xs:complexType name="ResidualType">
         <xs:annotation>
             <xs:documentation>Type for residuals</xs:documentation>
@@ -412,9 +390,7 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
     
-    <!-- TEST -->
     <xs:complexType name="PrecisionEstimatesPercentileType">
         <xs:annotation>
             <xs:documentation>Combined type for other population estimates</xs:documentation>
@@ -428,9 +404,7 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
     
-    <!-- Types for Individual Estimates -->
     <xs:complexType name="IndividualEstimatesType">
         <xs:annotation>
             <xs:documentation>Type defining the individual estimates.</xs:documentation>
@@ -489,20 +463,6 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-<!-- REMOVAL CANDIDATE
-        <xs:complexType name="PrecisionIndividualEstimatesType">
-        <xs:annotation>
-            <xs:documentation>Type defining the precision individual estimates.</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="PosteriorDistributionIndividualEstimates" minOccurs="0" type="so:SOTableDistribType"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType> -->    
-    
     <xs:complexType name="LikelihoodType">
         <xs:annotation>
             <xs:documentation>Type defining the likelihood.</xs:documentation>
@@ -513,7 +473,6 @@ permissions and limitations under the License.
                     <xs:sequence>
                         <xs:element name="LogLikelihood" minOccurs="0" type="ct:RealValueType"/>
                         <xs:element name="Deviance" minOccurs="0" type="ct:RealValueType"/>
-                        <!--                    <xs:element name="OFV" minOccurs="0" type="ct:RealValueType"/>-->
                         <xs:element name="IndividualContribToLL" minOccurs="0" type="ds:DataSetType"/>
                         <xs:element name="InformationCriteria" minOccurs="0" type="so:InformationCriteriaType"/>
                     </xs:sequence>
@@ -560,16 +519,12 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-    <!-- TEST -->
     <xs:complexType name="SimulationType">
         <xs:annotation>
             <xs:documentation>Type for the simulation section of the SO.</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
-                <!-- TEST - OriginalDataset - removed after Mikes comments -->
-<!--                <xs:sequence>
-                    <xs:element name="OriginalDataset" minOccurs="0" type="ds:ExternalFileType"/>-->
                     <xs:choice>
                         <xs:element maxOccurs="unbounded" name="SimulationBlock" type="so:SimulationBlockType"/>
                         <xs:sequence> 
@@ -585,9 +540,7 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
     
-    <!-- TEST -->
     <xs:complexType name="SimulationBlockType">
         <xs:annotation>
             <xs:documentation>Type for the simulation block for on ereplicate.</xs:documentation>
@@ -607,9 +560,7 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
     
-    <!-- TEST -->
     <xs:complexType name="ModelDiagnosticType">
         <xs:annotation>
             <xs:documentation>Type for the model diagnostic</xs:documentation>
@@ -625,9 +576,7 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
     
-    <!-- TEST -->
     <xs:complexType name="DiagnosticPlotsStructuralModelType">
         <xs:annotation>
             <xs:documentation>Type for diagnostic pLots for the structural model</xs:documentation>
@@ -644,9 +593,7 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TETS -->
     
-    <!-- TEST -->
     <xs:complexType name="IndivFits">
         <xs:annotation>
             <xs:documentation>Type for indivitual fits</xs:documentation>
@@ -662,8 +609,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
-    
 
     <!-- elements -->
     <xs:element name="SO" type="so:SOType">

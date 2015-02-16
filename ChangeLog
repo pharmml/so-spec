@@ -1,11 +1,30 @@
 ChangeLog
 
-17 Oct 2014
-First draft of the SO spec - Estimation part only
-
-7 Jan 2014
-- extensions in all sections
-- extended <RawResults>, new <TaskInformation>
-- new URI, .../so/x.y/... with x - major version, y - minorVersion
-
-
+0.0.1	30 April 2014	
+First document combining of initial proposals0.0.2	26 June 2014	
+Draft proposal on SO send out to the SO group 
+0.0.3	8 July 2014	
+Updated version after TC and incorporation of feedback
+0.0.4	30 July 2014	
+Comments after testing SO with examples provided by Mike and Marc
+0.0.5	5 September 2014	
+Update after TC
+0.0.6	12 September 2014	
+Final corrections after feedback from Emma
+0.0.7	17 October 2015	
+New section ‘Tool settings’ and changes in simulation 
+and optimal design sections
+0.0.8	8 December 2015	
+New section ‘task information’. Suggestions from Kajsa 
+and Rikard incorporated
+0.0.9	6 January 2015	
+Changes in model diagnostic and simulation sections after 
+TC with Marc and Mike
+0.0.10	15 January 2015	
+More changes in model diagnostic section, e.g. strata added. 
+Dosing records in simulation section.
+0.0.11	12 February 2015
+More minor corrections/changes e.g. relocated shrinkage elements.
+0.1	16 February 2015
+Removed redundant OriginalDataset element in Simulation section, 
+renamed Residual to Residuals.
