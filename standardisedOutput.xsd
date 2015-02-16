@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Copyright 2013-2015 European Molecular Biology Laboratory, Heidelberg,
-Germany and Novo Nordisk A/S, Bagsvaerd, Denmark.
+Germany and Merck Institute for Pharmacometrics, Merck Serono, Lausanne, Switzerland.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you
 may not use this file except in compliance with the License.  You may
@@ -207,7 +207,7 @@ permissions and limitations under the License.
                             <xs:documentation>Precision of individual estimates</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element minOccurs="0" name="Residual" type="so:ResidualType">
+                    <xs:element minOccurs="0" name="Residuals" type="so:ResidualType">
                         <xs:annotation>
                             <xs:documentation>The residuals</xs:documentation>
                         </xs:annotation>
@@ -560,23 +560,6 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-<!--  ORIGINAL
-        <xs:complexType name="SimulationType">
-        <xs:annotation>
-            <xs:documentation>Type for the simulation section of the SO.</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="SimulatedProfiles" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="IndivParametersCovariates" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="PopulationParametersCovariates" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="OriginalDataset" minOccurs="0" type="ds:ExternalFileType"/>                    
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>-->
-    
     <!-- TEST -->
     <xs:complexType name="SimulationType">
         <xs:annotation>
@@ -584,8 +567,9 @@ permissions and limitations under the License.
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
-                <xs:sequence>
-                    <xs:element name="OriginalDataset" minOccurs="0" type="ds:ExternalFileType"/>
+                <!-- TEST - OriginalDataset - removed after Mikes comments -->
+<!--                <xs:sequence>
+                    <xs:element name="OriginalDataset" minOccurs="0" type="ds:ExternalFileType"/>-->
                     <xs:choice>
                         <xs:element maxOccurs="unbounded" name="SimulationBlock" type="so:SimulationBlockType"/>
                         <xs:sequence> 
@@ -598,7 +582,6 @@ permissions and limitations under the License.
                             <xs:element name="RawResultsFile" minOccurs="0" type="ds:ExternalFileType"/>
                         </xs:sequence>
                     </xs:choice>
-                </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
