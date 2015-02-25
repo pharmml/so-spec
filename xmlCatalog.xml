@@ -5,7 +5,7 @@
     <system systemId="http://www.pharmml.org/pharmml/0.6/Maths" 
         uri="../pharmml-spec/definitions/maths.xsd"/>
     
-    <system systemId="http://www.pharmml.org/so/0.1/StandardisedOutput"
+    <system systemId="http://www.pharmml.org/so/0.2/StandardisedOutput"
         uri="standardisedOutput.xsd"/>
     
     <system systemId="http://www.pharmml.org/pharmml/0.6/Dataset" 
