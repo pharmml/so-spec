@@ -57,7 +57,9 @@ permissions and limitations under the License.
                             <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
                             <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
                             <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
-                            <!--   TODO <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
+                            <!-- TEST -->
+                            <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>
+                            <!-- /TEST -->
                         </xs:sequence>
                     </xs:choice>
                 </xs:sequence>
@@ -94,7 +96,7 @@ permissions and limitations under the License.
                     <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
                     <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
                     <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
-                    <!--   TODO xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>-->
+                    <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>
                 </xs:sequence>
                 <xs:attributeGroup ref="ct:BlockDefnGroup"/>
             </xs:extension>
@@ -610,6 +612,50 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
 
+    <!-- TEST -->
+    <xs:complexType name="OptimalDesignType">
+        <xs:annotation>
+            <xs:documentation>Type for the simulation section of the SO.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:choice>
+                    <xs:element maxOccurs="unbounded" name="OptimalDesignBlock" type="so:OptimalDesignBlockType"/>
+                    <xs:sequence> 
+                        <xs:element name="FIM" minOccurs="0" type="so:SOMatrixType"/>
+                        <xs:element name="CovarianceMatrix" minOccurs="0" type="so:SOMatrixType"/>
+                        <xs:element name="ParameterPrecision" minOccurs="0" type="ds:DataSetType"/>
+                        <xs:element name="Criteria" minOccurs="0" type="ds:DataSetType"/>
+                        <xs:element name="Tests" minOccurs="0" type="ds:DataSetType"/>
+                        <xs:element name="SimulatedData" minOccurs="0" type="ds:ExternalFileType"/>
+                        <xs:element name="Design" minOccurs="0" type="ds:ExternalFileType"/>
+                    </xs:sequence>
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="OptimalDesignBlockType">
+        <xs:annotation>
+            <xs:documentation>Type for the simulation block for on ereplicate.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
+                    <xs:element name="FIM" minOccurs="0" type="so:SOMatrixType"/>
+                    <xs:element name="CovarianceMatrix" minOccurs="0" type="so:SOMatrixType"/>
+                    <xs:element name="ParameterPrecision" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="Criteria" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="Tests" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="SimulatedData" minOccurs="0" type="ds:ExternalFileType"/>
+                    <xs:element name="Design" minOccurs="0" type="ds:ExternalFileType"/>
+                </xs:sequence>
+                <xs:attribute name="blockNumber" type="xs:integer"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- /TEST -->
+    
     <!-- elements -->
     <xs:element name="SO" type="so:SOType">
         <xs:annotation>
