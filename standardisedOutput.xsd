@@ -631,6 +631,7 @@ permissions and limitations under the License.
                         <xs:element name="Design" minOccurs="0" type="ds:ExternalFileType"/>
                     </xs:sequence>
                 </xs:choice>
+                <xs:attribute name="type" type="so:DesignTypeType"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -654,6 +655,13 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
+    
+    <xs:simpleType name="DesignTypeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="evaluation"/>
+            <xs:enumeration value="optimization"/>
+        </xs:restriction>
+    </xs:simpleType>
     <!-- /TEST -->
     
     <!-- elements -->
