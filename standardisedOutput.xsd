@@ -305,6 +305,23 @@ permissions and limitations under the License.
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
+                    <!-- TEST -->
+                    <xs:element name="Bootstrap" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>Placeholder for Bootstrap population estimates.</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexType>
+                            <xs:complexContent>
+                                <xs:extension base="ct:PharmMLRootType">
+                                    <xs:sequence>
+                                        <xs:element name="Mean" minOccurs="0" type="ds:DataSetType"/>                                        
+                                        <xs:element name="Median" minOccurs="0" type="ds:DataSetType"/>                                        
+                                    </xs:sequence>
+                                </xs:extension>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>
+                    <!-- /TEST -->
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
