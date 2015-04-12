@@ -548,12 +548,12 @@ permissions and limitations under the License.
                     <xs:choice>
                         <xs:element maxOccurs="unbounded" name="SimulationBlock" type="so:SimulationBlockType"/>
                         <xs:sequence> 
-                            <xs:element name="SimulatedProfiles" minOccurs="0" maxOccurs="unbounded" type="so:SimulatedProfilesType"/>
-                            <xs:element name="IndivParameters" minOccurs="0" maxOccurs="unbounded" type="so:IndivParametersType"/>
-                            <xs:element name="RandomEffects" minOccurs="0" maxOccurs="unbounded" type="so:RandomEffectsType"/>
-                            <xs:element name="Covariates" minOccurs="0" maxOccurs="unbounded" type="so:CovariatesType"/>
-                            <xs:element name="PopulationParameters" minOccurs="0" maxOccurs="unbounded" type="so:PopulationParametersType"/>
-                            <xs:element name="Dosing" minOccurs="0" maxOccurs="unbounded" type="so:DosingType"/>
+                            <xs:element name="SimulatedProfiles" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
+                            <xs:element name="IndivParameters" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
+                            <xs:element name="RandomEffects" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
+                            <xs:element name="Covariates" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
+                            <xs:element name="PopulationParameters" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
+                            <xs:element name="Dosing" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
                             <xs:element name="RawResultsFile" minOccurs="0" type="ds:ExternalFileType"/>
                         </xs:sequence>
                     </xs:choice>
@@ -562,46 +562,11 @@ permissions and limitations under the License.
     </xs:complexType>
     <!-- /TEST -->
     
-    <!-- TEST -->
-    <xs:complexType name="SimulatedProfilesType">
+    <xs:complexType name="SimulationSubType">
         <xs:complexContent>
             <xs:extension base="ds:DataSetType">
-                <xs:attribute name="name" type="xs:string"/>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="IndivParametersType">
-        <xs:complexContent>
-            <xs:extension base="ds:DataSetType">
-                <xs:attribute name="name" type="xs:string"/>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="RandomEffectsType">
-        <xs:complexContent>
-            <xs:extension base="ds:DataSetType">
-                <xs:attribute name="name" type="xs:string"/>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="CovariatesType">
-        <xs:complexContent>
-            <xs:extension base="ds:DataSetType">
-                <xs:attribute name="name" type="xs:string"/>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="PopulationParametersType">
-        <xs:complexContent>
-            <xs:extension base="ds:DataSetType">
-                <xs:attribute name="name" type="xs:string"/>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="DosingType">
-        <xs:complexContent>
-            <xs:extension base="ds:DataSetType">
-                <xs:attribute name="name" type="xs:string"/>
+                <xs:attribute name="name" use="optional" type="xs:string"/>
+                <xs:attribute name="extFileNo" use="optional" type="xs:integer"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -614,12 +579,12 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence> 
-                    <xs:element name="SimulatedProfiles" minOccurs="0" maxOccurs="unbounded" type="so:SimulatedProfilesType"/>
-                    <xs:element name="IndivParameters" minOccurs="0" maxOccurs="unbounded" type="so:IndivParametersType"/>
-                    <xs:element name="RandomEffects" minOccurs="0" maxOccurs="unbounded" type="so:RandomEffectsType"/>
-                    <xs:element name="Covariates" minOccurs="0" maxOccurs="unbounded" type="so:CovariatesType"/>
-                    <xs:element name="PopulationParameters" minOccurs="0" maxOccurs="unbounded" type="so:PopulationParametersType"/>
-                    <xs:element name="Dosing" minOccurs="0" maxOccurs="unbounded" type="so:DosingType"/>
+                    <xs:element name="SimulatedProfiles" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
+                    <xs:element name="IndivParameters" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
+                    <xs:element name="RandomEffects" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
+                    <xs:element name="Covariates" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
+                    <xs:element name="PopulationParameters" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
+                    <xs:element name="Dosing" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
                     <xs:element name="RawResultsFile" minOccurs="0" type="ds:ExternalFileType"/>
                 </xs:sequence>
                 <xs:attribute name="replicate" type="xs:integer"/>
