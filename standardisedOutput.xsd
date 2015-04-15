@@ -358,6 +358,7 @@ permissions and limitations under the License.
                                             <xs:element name="StandardError" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="RelativeStandardError" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="AsymptoticCI" minOccurs="0" type="ds:DataSetType"/>
+                                            <xs:element name="ConditionNumber" minOccurs="0" type="ct:Rhs"/>                    
                                         </xs:sequence>
                                     </xs:choice>
                                 </xs:extension>
