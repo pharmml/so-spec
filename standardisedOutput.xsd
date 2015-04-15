@@ -420,6 +420,9 @@ permissions and limitations under the License.
                 <xs:sequence>
                     <xs:element name="PrecisionEstimates" type="ds:DataSetType"/>
                     <xs:element name="Percentiles" type="ds:DataSetType"/>
+                    <!-- TEST -->
+                    <xs:element name="PosteriorDistribution" minOccurs="0" type="so:SOTableDistribType"/>
+                    <!-- /TEST -->
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
