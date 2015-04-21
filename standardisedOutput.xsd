@@ -50,16 +50,14 @@ permissions and limitations under the License.
                     <xs:choice>
                         <xs:element maxOccurs="unbounded" name="SOBlock" type="so:SOBlockType"/>
                         <xs:sequence> 
-                            <!-- must contain the same elements as in the SOBlockType -->
+                            <!-- same elements as in the SOBlockType -->
                             <xs:element minOccurs="0" name="ToolSettings" type="so:ToolSettingsType"/>
                             <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                             <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                             <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
                             <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
                             <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
-                            <!-- TEST -->
                             <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>
-                            <!-- /TEST -->
                         </xs:sequence>
                     </xs:choice>
                 </xs:sequence>
@@ -89,7 +87,7 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <!-- must contain the same elements as in the SOType -->
+                    <!-- same elements as in the SOType -->
                     <xs:element minOccurs="0" name="ToolSettings" type="so:ToolSettingsType"/>
                     <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                     <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
@@ -103,7 +101,6 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
 
-    <!-- TEST -->
     <xs:complexType name="ToolSettingsType">
         <xs:annotation>
             <xs:documentation>Tool Settings Type</xs:documentation>
@@ -118,7 +115,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->    
     
     <xs:complexType name="RawResultsType">
         <xs:annotation>
@@ -322,7 +318,6 @@ permissions and limitations under the License.
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
-                    <!-- TEST -->
                     <xs:element name="Bootstrap" minOccurs="0">
                         <xs:annotation>
                             <xs:documentation>Placeholder for Bootstrap population estimates.</xs:documentation>
@@ -338,13 +333,11 @@ permissions and limitations under the License.
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
-                    <!-- /TEST -->
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>    
     
-    <!-- Types for Precision Population Estimates -->
     <xs:complexType name="PrecisionPopulationEstimatesType">
         <xs:annotation>
             <xs:documentation>Type defining the precision population estimates.</xs:documentation>
@@ -375,9 +368,7 @@ permissions and limitations under the License.
                                             <xs:element name="StandardError" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="RelativeStandardError" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="AsymptoticCI" minOccurs="0" type="ds:DataSetType"/>
-                                            <!-- TEST -->
                                             <xs:element name="ConditionNumber" minOccurs="0" type="ct:Rhs"/>                    
-                                            <!-- /TEST -->
                                         </xs:sequence>
                                     </xs:choice>
                                 </xs:extension>
@@ -439,9 +430,7 @@ permissions and limitations under the License.
                 <xs:sequence>
                     <xs:element name="PrecisionEstimates" type="ds:DataSetType"/>
                     <xs:element name="Percentiles" type="ds:DataSetType"/>
-                    <!-- TEST -->
                     <xs:element name="PosteriorDistribution" minOccurs="0" type="so:SOTableDistribType"/>
-                    <!-- /TEST -->
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -498,7 +487,6 @@ permissions and limitations under the License.
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
-                    <!-- EtaShrinkage -->
                     <xs:element name="EtaShrinkage" minOccurs="0" type="ds:DataSetType"/>                                        
                 </xs:sequence>
             </xs:extension>
@@ -561,7 +549,6 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-    <!-- TEST -->
     <xs:complexType name="SimulationType">
         <xs:annotation>
             <xs:documentation>Type for the simulation section of the SO.</xs:documentation>
@@ -583,7 +570,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
     
     <xs:complexType name="SimulationSubType">
         <xs:complexContent>
@@ -593,7 +579,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
     
     <xs:complexType name="SimulationBlockType">
         <xs:annotation>
@@ -664,7 +649,6 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
 
-    <!-- TEST -->
     <xs:complexType name="OptimalDesignType">
         <xs:annotation>
             <xs:documentation>Type for the simulation section of the SO.</xs:documentation>
@@ -714,7 +698,6 @@ permissions and limitations under the License.
             <xs:enumeration value="optimization"/>
         </xs:restriction>
     </xs:simpleType>
-    <!-- /TEST -->
     
     <!-- elements -->
     <xs:element name="SO" type="so:SOType">
