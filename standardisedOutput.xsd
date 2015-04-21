@@ -51,7 +51,7 @@ permissions and limitations under the License.
                         <xs:element maxOccurs="unbounded" name="SOBlock" type="so:SOBlockType"/>
                         <xs:sequence> 
                             <!-- must contain the same elements as in the SOBlockType -->
-                            <xs:element minOccurs="0" name="ToolSettings" type="ds:ExternalFileType"/>
+                            <xs:element minOccurs="0" name="ToolSettings" type="so:ToolSettingsType"/>
                             <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                             <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                             <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
@@ -90,7 +90,7 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
                     <!-- must contain the same elements as in the SOType -->
-                    <xs:element minOccurs="0" name="ToolSettings" type="ds:ExternalFileType"/>
+                    <xs:element minOccurs="0" name="ToolSettings" type="so:ToolSettingsType"/>
                     <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                     <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
                     <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
@@ -103,6 +103,23 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
 
+    <!-- TEST -->
+    <xs:complexType name="ToolSettingsType">
+        <xs:annotation>
+            <xs:documentation>Tool Settings Type</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:choice maxOccurs="unbounded">
+                    <xs:sequence>
+                        <xs:element name="File" minOccurs="0" maxOccurs="unbounded" type="ds:ExternalFileType"/>
+                    </xs:sequence>
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- /TEST -->    
+    
     <xs:complexType name="RawResultsType">
         <xs:annotation>
             <xs:documentation>Row Results Type</xs:documentation>
