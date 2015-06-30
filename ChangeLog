@@ -28,3 +28,11 @@ More minor corrections/changes e.g. relocated shrinkage elements.
 0.1	16 February 2015
 Removed redundant OriginalDataset element in Simulation section, 
 renamed Residual to Residuals.
+
+0.1.1	11 March 2015	
+Optimal Design extensions implemented. SO schema updated and 
+minor edits.0.1.2	14 April 2015	
+New posterior distribution elements in bootstrap element and 
+related, new attribute in simulation child-elements 0.2	22 April 2015	
+Multiple tool-setting files allowed, adding footnotes on dosing 
+records inclusion, minor corrections
