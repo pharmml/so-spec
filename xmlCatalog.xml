@@ -22,6 +22,11 @@
     <system
         systemId="http://www.uncertml.org/3.0" 
         uri="../pharmml-spec/uncertweb/UncertML30.xsd"/>
-
+    
+    <!-- probonto -->
+    <system
+        systemId="http://www.uncertml.org/3.0" 
+        uri="../pharmml-spec/uncertweb/UncertML30.xsd"/>
+    
 </catalog>
 
