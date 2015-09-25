@@ -197,7 +197,7 @@ permissions and limitations under the License.
                             <xs:documentation>Individual estimates</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element minOccurs="0" name="PrecisionIndividualEstimates" type="so:SOTableDistribType">
+                    <xs:element minOccurs="0" name="PrecisionIndividualEstimates" type="so:PrecisionIndividualEstimatesType">
                         <xs:annotation>
                             <xs:documentation>Precision of individual estimates</xs:documentation>
                         </xs:annotation>
@@ -226,6 +226,25 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
+    
+    <!-- TEST -->
+    <xs:complexType name="PrecisionIndividualEstimatesType">
+        <xs:annotation>
+            <xs:documentation>Type for precision individual estimates</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:sequence>
+                    <xs:element name="StandardDeviationPosterior" minOccurs="0" type="ds:DataSetType"/>
+                    <xs:element name="PosteriorDistribution" minOccurs="0" type="so:SOTableDistribType"/>
+                    <xs:element name="PercentilesCI" minOccurs="0" type="ds:DataSetType"/>
+                </xs:sequence>
+<!--                plus SOTableDistribType1-->
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- TEST -->
+    
     
     <xs:complexType name="PharmMLRefType">
         <xs:annotation>
