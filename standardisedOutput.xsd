@@ -16,14 +16,14 @@ implied. See the License for the specific language governing
 permissions and limitations under the License.
 -->    
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://www.pharmml.org/so/0.2/StandardisedOutput"
-    xmlns:so="http://www.pharmml.org/so/0.2/StandardisedOutput"
+    targetNamespace="http://www.pharmml.org/so/0.3/StandardisedOutput"
+    xmlns:so="http://www.pharmml.org/so/0.3/StandardisedOutput"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
     xmlns:distrib="http://www.uncertml.org/3.0"
     xmlns:ct="http://www.pharmml.org/pharmml/0.7/CommonTypes"
     xmlns:ds="http://www.pharmml.org/pharmml/0.7/Dataset"
-    version="0.2">
+    version="0.3">
     
     <xs:import namespace="http://www.pharmml.org/pharmml/0.7/CommonTypes"
         schemaLocation="http://www.pharmml.org/pharmml/0.7/CommonTypes"/>

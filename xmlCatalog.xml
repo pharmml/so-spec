@@ -5,7 +5,7 @@
     <system systemId="http://www.pharmml.org/pharmml/0.7/Maths" 
         uri="../pharmml-spec/definitions/maths.xsd"/>
     
-    <system systemId="http://www.pharmml.org/so/0.2/StandardisedOutput"
+    <system systemId="http://www.pharmml.org/so/0.3/StandardisedOutput"
         uri="standardisedOutput.xsd"/>
     
     <system systemId="http://www.pharmml.org/pharmml/0.7/Dataset" 
@@ -24,9 +24,7 @@
         uri="../pharmml-spec/uncertweb/UncertML30.xsd"/>
     
     <!-- probonto -->
-    <system
-        systemId="http://www.uncertml.org/3.0" 
-        uri="../pharmml-spec/uncertweb/UncertML30.xsd"/>
+
     
 </catalog>
 
