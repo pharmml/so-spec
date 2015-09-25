@@ -239,7 +239,6 @@ permissions and limitations under the License.
                     <xs:element name="PosteriorDistribution" minOccurs="0" type="so:SOTableDistribType"/>
                     <xs:element name="PercentilesCI" minOccurs="0" type="ds:DataSetType"/>
                 </xs:sequence>
-<!--                plus SOTableDistribType1-->
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
