@@ -374,7 +374,7 @@ permissions and limitations under the License.
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
-                    <xs:element name="Bootstrap" minOccurs="0">
+                    <xs:element name="OtherMethod" minOccurs="0" maxOccurs="unbounded">
                         <xs:annotation>
                             <xs:documentation>Placeholder for Bootstrap population estimates.</xs:documentation>
                         </xs:annotation>
@@ -385,6 +385,7 @@ permissions and limitations under the License.
                                         <xs:element name="Mean" minOccurs="0" type="ds:DataSetType"/>                                        
                                         <xs:element name="Median" minOccurs="0" type="ds:DataSetType"/>                                        
                                     </xs:sequence>
+                                    <xs:attribute name="method" type="so:OtherMethodName"/>
                                 </xs:extension>
                             </xs:complexContent>
                         </xs:complexType>
@@ -402,7 +403,7 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:annotation>
                     <xs:documentation>
-                        First level of the precision of population estimates.
+                        The precision of population estimates.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:sequence>
@@ -410,23 +411,21 @@ permissions and limitations under the License.
                     <xs:element minOccurs="0" name="MLE">
                         <xs:annotation>
                             <xs:documentation>
-                                Second level of the precision of the MLE population estimates.
+                                Precision of the MLE population estimates.
                             </xs:documentation>
                         </xs:annotation>
                         <xs:complexType>
                             <xs:complexContent>
                                 <xs:extension base="ct:PharmMLRootType">
-                                    <xs:choice maxOccurs="unbounded">
-                                        <xs:sequence>
-                                            <xs:element name="FIM" minOccurs="0" type="so:SOMatrixType"/>
-                                            <xs:element name="CovarianceMatrix" minOccurs="0" type="so:SOMatrixType"/>
-                                            <xs:element name="CorrelationMatrix" minOccurs="0" type="so:SOMatrixType"/>
-                                            <xs:element name="StandardError" minOccurs="0" type="ds:DataSetType"/>
-                                            <xs:element name="RelativeStandardError" minOccurs="0" type="ds:DataSetType"/>
-                                            <xs:element name="AsymptoticCI" minOccurs="0" type="ds:DataSetType"/>
-                                            <xs:element name="ConditionNumber" minOccurs="0" type="ct:Rhs"/>                    
-                                        </xs:sequence>
-                                    </xs:choice>
+                                    <xs:sequence>
+                                        <xs:element name="FIM" minOccurs="0" type="so:SOMatrixType"/>
+                                        <xs:element name="CovarianceMatrix" minOccurs="0" type="so:SOMatrixType"/>
+                                        <xs:element name="CorrelationMatrix" minOccurs="0" type="so:SOMatrixType"/>
+                                        <xs:element name="StandardError" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="RelativeStandardError" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="AsymptoticCI" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="ConditionNumber" minOccurs="0" type="ct:Rhs"/>                    
+                                    </xs:sequence>
                                 </xs:extension>
                             </xs:complexContent>
                         </xs:complexType>
@@ -435,7 +434,7 @@ permissions and limitations under the License.
                     <xs:element minOccurs="0" name="Bayesian">
                         <xs:annotation>
                             <xs:documentation>
-                                Second level of the precision of the Bayesian population estimates.
+                                Precision of the Bayesian population estimates.
                             </xs:documentation>
                         </xs:annotation>
                         <xs:complexType>
@@ -450,14 +449,29 @@ permissions and limitations under the License.
                             </xs:complexContent>
                         </xs:complexType>
                     </xs:element>
-                    <!-- BOOTSTRAP -->
-                    <xs:element name="Bootstrap" minOccurs="0" type="so:PrecisionEstimatesPercentileType"/>                                        
-                    <!-- LLP -->
-                    <xs:element name="LLP" minOccurs="0" type="so:PrecisionEstimatesPercentileType"/>                                        
-                    <!-- SIR -->
-                    <xs:element name="SIR" minOccurs="0" type="so:PrecisionEstimatesPercentileType"/>                                        
-                    <!-- MultiDimLLP -->
-                    <xs:element name="MultiDimLLP" minOccurs="0" type="so:PrecisionEstimatesPercentileType"/>                                        
+                    <!-- OtherMethod -->
+                    <xs:element name="OtherMethod" minOccurs="0" maxOccurs="unbounded">
+                        <xs:annotation>
+                            <xs:documentation>
+                                Precision of the OtherMethods population estimates.
+                            </xs:documentation>
+                        </xs:annotation>
+                        <xs:complexType>
+                            <xs:complexContent>
+                                <xs:extension base="ct:PharmMLRootType">
+                                    <xs:sequence>
+                                        <xs:element name="CovarianceMatrix" minOccurs="0" type="so:SOMatrixType"/>
+                                        <xs:element name="CorrelationMatrix" minOccurs="0" type="so:SOMatrixType"/>
+                                        <xs:element name="StandardDeviation" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="StandardError" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="AsymptoticCI" minOccurs="0" type="ds:DataSetType"/>
+                                        <xs:element name="PosteriorDistribution" minOccurs="0" type="so:SOTableDistribType"/>
+                                        <xs:element name="PercentilesCI" minOccurs="0" type="ds:DataSetType"/>
+                                    </xs:sequence>
+                                </xs:extension>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>                                        
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -754,6 +768,17 @@ permissions and limitations under the License.
             <xs:enumeration value="optimization"/>
         </xs:restriction>
     </xs:simpleType>
+    
+    <!-- TEST -->
+    <xs:simpleType name="OtherMethodName">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Bootstrap"/>
+            <xs:enumeration value="LLP"/>
+            <xs:enumeration value="SIR"/>
+            <xs:enumeration value="MultiDimLLP"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- /TEST -->
     
     <!-- elements -->
     <xs:element name="SO" type="so:SOType">
