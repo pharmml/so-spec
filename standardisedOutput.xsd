@@ -385,7 +385,7 @@ permissions and limitations under the License.
                                         <xs:element name="Mean" minOccurs="0" type="ds:DataSetType"/>                                        
                                         <xs:element name="Median" minOccurs="0" type="ds:DataSetType"/>                                        
                                     </xs:sequence>
-                                    <xs:attribute name="method" type="so:OtherMethodName"/>
+                                    <xs:attribute name="method" use="required" type="so:OtherMethodName"/>
                                 </xs:extension>
                             </xs:complexContent>
                         </xs:complexType>
@@ -468,6 +468,7 @@ permissions and limitations under the License.
                                         <xs:element name="PosteriorDistribution" minOccurs="0" type="so:SOTableDistribType"/>
                                         <xs:element name="PercentilesCI" minOccurs="0" type="ds:DataSetType"/>
                                     </xs:sequence>
+                                    <xs:attribute name="method" use="required" type="so:OtherMethodName"/>
                                 </xs:extension>
                             </xs:complexContent>
                         </xs:complexType>
