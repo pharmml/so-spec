@@ -141,9 +141,9 @@ permissions and limitations under the License.
                 <xs:sequence>
                     <xs:element name="Message" minOccurs="0" maxOccurs="unbounded" type="so:MessageType"/>
                     <xs:element name="OutputFilePath" minOccurs="0" type="ds:ExternalFileType"/>
-                    <xs:element name="RunTime" minOccurs="0" type="ct:Rhs"/>
-                    <xs:element name="NumberChains" minOccurs="0" type="ct:Rhs"/>             
-                    <xs:element name="NumberIterations" minOccurs="0" type="ct:Rhs"/>                    
+                    <xs:element name="RunTime" minOccurs="0" type="ct:RealValueType"/>
+                    <xs:element name="NumberChains" minOccurs="0" type="ct:IntValueType"/>             
+                    <xs:element name="NumberIterations" minOccurs="0" type="ct:IntValueType"/>                    
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -156,10 +156,10 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <xs:element name="Toolname" type="ct:Rhs"/>
-                    <xs:element name="Name" type="ct:Rhs"/>
-                    <xs:element name="Content" type="ct:Rhs"/>
-                    <xs:element name="Severity" type="ct:Rhs"/>
+                    <xs:element name="Toolname" type="ct:StringValueType"/>
+                    <xs:element name="Name" type="ct:StringValueType"/>
+                    <xs:element name="Content" type="ct:StringValueType"/>
+                    <xs:element name="Severity" type="ct:IntValueType"/>        <!-- limits??? -->
                 </xs:sequence>
                 <xs:attribute use="required" name="type">
                     <xs:simpleType>
@@ -424,7 +424,7 @@ permissions and limitations under the License.
                                         <xs:element name="StandardError" minOccurs="0" type="ds:DataSetType"/>
                                         <xs:element name="RelativeStandardError" minOccurs="0" type="ds:DataSetType"/>
                                         <xs:element name="AsymptoticCI" minOccurs="0" type="ds:DataSetType"/>
-                                        <xs:element name="ConditionNumber" minOccurs="0" type="ct:Rhs"/>                    
+                                        <xs:element name="ConditionNumber" minOccurs="0" type="ct:RealValueType"/>                    
                                     </xs:sequence>
                                 </xs:extension>
                             </xs:complexContent>
