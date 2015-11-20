@@ -23,6 +23,7 @@ permissions and limitations under the License.
     xmlns:distrib="http://www.uncertml.org/3.0"
     xmlns:ct="http://www.pharmml.org/pharmml/0.7/CommonTypes"
     xmlns:ds="http://www.pharmml.org/pharmml/0.7/Dataset"
+    xmlns:po="http://www.pharmml.org/probonto/ProbOnto"
     version="0.3">
     
     <xs:import namespace="http://www.pharmml.org/pharmml/0.7/CommonTypes"
@@ -34,7 +35,9 @@ permissions and limitations under the License.
     <xs:import namespace="http://www.uncertml.org/3.0"
         schemaLocation="http://www.uncertml.org/3.0"/>    
     
-
+    <xs:import namespace="http://www.pharmml.org/probonto/ProbOnto" 
+        schemaLocation="../pharmml-probonto/probOnto.xsd"/>
+    
     <xs:complexType name="SOType">
         <xs:annotation>
             <xs:documentation>A type defining the SO.</xs:documentation>
@@ -283,7 +286,7 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:choice>
-                    <xs:element ref="distrib:AbstractContinuousUnivariateDistribution">
+<!--                    <xs:element ref="distrib:AbstractContinuousUnivariateDistribution">
                         <xs:annotation>
                             <xs:documentation>
                                 A continuous univariate probability distribution, defined by UncertML. 
@@ -296,7 +299,8 @@ permissions and limitations under the License.
                                 A continuous multivariate probability distribution, defined by UncertML. 
                             </xs:documentation>
                         </xs:annotation>
-                    </xs:element>
+                    </xs:element>-->
+                    <xs:element name="Distribution" type="so:DistributionType"/>
                     <xs:element name="DataSet" type="ds:DataSetType">
                         <xs:annotation>
                             <xs:documentation>
@@ -309,6 +313,21 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     <!-- /ORG -->
+    
+    <!-- TEST -->
+    <xs:complexType name="DistributionType">
+        <xs:annotation>
+            <xs:documentation>Type defining a distribution using ProbOnto.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:choice>
+                    <xs:element ref="po:ProbOnto"/>
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- /TEST -->
     
 <!-- IDEAS:   
         <xs:complexType name="SOTableDistribType">
