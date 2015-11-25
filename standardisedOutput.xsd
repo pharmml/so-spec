@@ -699,7 +699,9 @@ permissions and limitations under the License.
                 <xs:choice maxOccurs="unbounded">
                     <xs:sequence>
                         <xs:element minOccurs="0" name="DiagnosticPlotsStructuralModel" type="so:DiagnosticPlotsStructuralModelType"/>
-                        <xs:element minOccurs="0" name="DiagnosticPlotsIndividualParams" type="ds:DataSetType"/>
+                        <!-- TEST -->
+                        <xs:element minOccurs="0" name="DiagnosticPlotsIndividualParams" type="so:DiagnosticPlotsIndividualParamsType"/>
+                        <!-- /TEST -->
                     </xs:sequence>
                 </xs:choice>
             </xs:extension>
@@ -722,6 +724,25 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
+    
+    <!-- TEST -->
+    <xs:complexType name="DiagnosticPlotsIndividualParamsType">
+        <xs:annotation>
+            <xs:documentation>Type for diagnostic pLots for the structural model</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:PharmMLRootType">
+                <xs:choice maxOccurs="unbounded">
+                    <xs:sequence>
+                        <xs:element name="RandomEffects" minOccurs="0" type="ds:DataSetType"/>
+                        <xs:element name="RelationIndivParamsCovariates" minOccurs="0" type="ds:DataSetType"/>
+                        <xs:element name="PDFIndivParams" minOccurs="0" type="ds:DataSetType"/>
+                    </xs:sequence>
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- /TEST -->
     
     <xs:complexType name="IndivFits">
         <xs:annotation>
