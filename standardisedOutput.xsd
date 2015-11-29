@@ -239,7 +239,7 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
                     <xs:element name="StandardDeviation" minOccurs="0" type="ds:DataSetType"/>
-                    <xs:element name="PosteriorDistribution" minOccurs="0" type="so:SOTableDistribType"/>
+                    <xs:element name="Distribution" minOccurs="0" type="so:SOTableDistribType"/>
                     <xs:element name="PercentilesCI" minOccurs="0" type="ds:DataSetType"/>
                 </xs:sequence>
             </xs:extension>
@@ -728,7 +728,7 @@ permissions and limitations under the License.
     <!-- TEST -->
     <xs:complexType name="DiagnosticPlotsIndividualParamsType">
         <xs:annotation>
-            <xs:documentation>Type for diagnostic pLots for the structural model</xs:documentation>
+            <xs:documentation>Type for diagnostic pLots for individual parameters</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
