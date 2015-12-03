@@ -735,8 +735,10 @@ permissions and limitations under the License.
                 <xs:choice maxOccurs="unbounded">
                     <xs:sequence>
                         <xs:element name="RandomEffects" minOccurs="0" type="ds:DataSetType"/>
-                        <xs:element name="RelationIndivParamsCovariates" minOccurs="0" type="ds:DataSetType"/>
-                        <xs:element name="PDFIndivParams" minOccurs="0" type="ds:DataSetType"/>
+                        <!-- TEST name change -->
+                        <xs:element name="IndivParamsCovariates" minOccurs="0" type="ds:DataSetType"/>
+                        <xs:element name="DistributionIndivParams" minOccurs="0" type="ds:DataSetType"/>
+                        <!-- /TEST -->
                     </xs:sequence>
                 </xs:choice>
             </xs:extension>
