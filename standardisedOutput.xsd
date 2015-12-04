@@ -548,7 +548,7 @@ permissions and limitations under the License.
                                             <xs:element name="Mean" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="Median" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="Mode" minOccurs="0" type="ds:DataSetType"/>
-                                            <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>
+<!--                                            <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>-->
                                         </xs:sequence>
                                     </xs:choice>
                                 </xs:extension>
@@ -570,7 +570,7 @@ permissions and limitations under the License.
                                             <xs:element name="EffectMean" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="EffectMedian" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="EffectMode" minOccurs="0" type="ds:DataSetType"/>
-                                            <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>
+<!--                                            <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>-->
                                         </xs:sequence>
                                     </xs:choice>
                                 </xs:extension>
