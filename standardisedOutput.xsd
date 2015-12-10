@@ -52,8 +52,9 @@ permissions and limitations under the License.
                     </xs:element>
                     <xs:choice>
                         <xs:element maxOccurs="unbounded" name="SOBlock" type="so:SOBlockType"/>
-                        <xs:sequence> 
-                            <!-- same elements as in the SOBlockType -->
+                    </xs:choice>
+<!--                        <xs:sequence> 
+                            <!-\- same elements as in the SOBlockType -\->
                             <xs:element minOccurs="0" name="ToolSettings" type="so:ToolSettingsType"/>
                             <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                             <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
@@ -61,8 +62,7 @@ permissions and limitations under the License.
                             <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
                             <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
                             <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>
-                        </xs:sequence>
-                    </xs:choice>
+                        </xs:sequence>-->
                 </xs:sequence>
                 <xs:attribute name="writtenVersion" type="xs:string" use="required">
                     <xs:annotation>
@@ -647,7 +647,7 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                     <xs:choice>
                         <xs:element maxOccurs="unbounded" name="SimulationBlock" type="so:SimulationBlockType"/>
-                        <xs:sequence> 
+<!--                        <xs:sequence> 
                             <xs:element name="SimulatedProfiles" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
                             <xs:element name="IndivParameters" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
                             <xs:element name="RandomEffects" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
@@ -655,7 +655,7 @@ permissions and limitations under the License.
                             <xs:element name="PopulationParameters" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
                             <xs:element name="Dosing" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
                             <xs:element name="RawResultsFile" minOccurs="0" type="ds:ExternalFileType"/>
-                        </xs:sequence>
+                        </xs:sequence>-->
                     </xs:choice>
             </xs:extension>
         </xs:complexContent>
@@ -770,7 +770,7 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:choice>
                     <xs:element maxOccurs="unbounded" name="OptimalDesignBlock" type="so:OptimalDesignBlockType"/>
-                    <xs:sequence> 
+<!--                    <xs:sequence> 
                         <xs:element name="FIM" minOccurs="0" type="so:SOMatrixType"/>
                         <xs:element name="CovarianceMatrix" minOccurs="0" type="so:SOMatrixType"/>
                         <xs:element name="ParameterPrecision" minOccurs="0" type="ds:DataSetType"/>
@@ -778,7 +778,7 @@ permissions and limitations under the License.
                         <xs:element name="Tests" minOccurs="0" type="ds:DataSetType"/>
                         <xs:element name="SimulatedData" minOccurs="0" type="ds:ExternalFileType"/>
                         <xs:element name="Design" minOccurs="0" type="ds:ExternalFileType"/>
-                    </xs:sequence>
+                    </xs:sequence>-->
                 </xs:choice>
                 <xs:attribute name="type" type="so:DesignTypeType"/>
             </xs:extension>
