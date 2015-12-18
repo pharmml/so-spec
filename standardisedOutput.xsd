@@ -162,7 +162,7 @@ permissions and limitations under the License.
                     <xs:element name="Toolname" type="ct:StringValueType"/>
                     <xs:element name="Name" type="ct:StringValueType"/>
                     <xs:element name="Content" type="ct:StringValueType"/>
-                    <xs:element name="Severity" type="ct:IntValueType"/>        <!-- limits??? -->
+                    <xs:element name="Severity" type="ct:IntValueType"/>
                 </xs:sequence>
                 <xs:attribute use="required" name="type">
                     <xs:simpleType>
@@ -229,8 +229,7 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
-    <!-- TEST -->
+
     <xs:complexType name="PrecisionIndividualEstimatesType">
         <xs:annotation>
             <xs:documentation>Type for precision individual estimates</xs:documentation>
@@ -245,8 +244,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- TEST -->
-    
     
     <xs:complexType name="PharmMLRefType">
         <xs:annotation>
@@ -278,7 +275,6 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
 
-    <!-- ORG -->
     <xs:complexType name="SOTableDistribType">
         <xs:annotation>
             <xs:documentation>Type defining distribution of the estimation results.</xs:documentation>
@@ -286,20 +282,6 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:choice>
-<!--                    <xs:element ref="distrib:AbstractContinuousUnivariateDistribution">
-                        <xs:annotation>
-                            <xs:documentation>
-                                A continuous univariate probability distribution, defined by UncertML. 
-                            </xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element ref="distrib:AbstractContinuousMultivariateDistribution">
-                        <xs:annotation>
-                            <xs:documentation>
-                                A continuous multivariate probability distribution, defined by UncertML. 
-                            </xs:documentation>
-                        </xs:annotation>
-                    </xs:element>-->
                     <xs:element name="Distribution" type="so:DistributionType"/>
                     <xs:element name="DataSet" type="ds:DataSetType">
                         <xs:annotation>
@@ -312,9 +294,7 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /ORG -->
     
-    <!-- TEST -->
     <xs:complexType name="DistributionType">
         <xs:annotation>
             <xs:documentation>Type defining a distribution using ProbOnto.</xs:documentation>
@@ -327,42 +307,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
-    
-<!-- IDEAS:   
-        <xs:complexType name="SOTableDistribType">
-        <xs:annotation>
-            <xs:documentation>Type defining distribution of the estimation results.</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="ct:PharmMLRootType">
-                <xs:choice>
-                    <xs:element name="Distribution" minOccurs="0" type="mdef:DistributionType"/>
-                    <xs:element ref="distrib:AbstractContinuousUnivariateDistribution">
-                        <xs:annotation>
-                            <xs:documentation>
-                                A continuous univariate probability distribution, defined by UncertML. 
-                            </xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element ref="distrib:AbstractContinuousMultivariateDistribution">
-                        <xs:annotation>
-                            <xs:documentation>
-                                A continuous multivariate probability distribution, defined by UncertML. 
-                            </xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="DataSet" type="ds:DataSetType">
-                        <xs:annotation>
-                            <xs:documentation>
-                                Inline data set/table or an external file.
-                            </xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:choice>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>-->
     
     
     <xs:complexType name="PopulationEstimatesType">
@@ -548,7 +492,6 @@ permissions and limitations under the License.
                                             <xs:element name="Mean" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="Median" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="Mode" minOccurs="0" type="ds:DataSetType"/>
-<!--                                            <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>-->
                                         </xs:sequence>
                                     </xs:choice>
                                 </xs:extension>
@@ -570,7 +513,6 @@ permissions and limitations under the License.
                                             <xs:element name="EffectMean" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="EffectMedian" minOccurs="0" type="ds:DataSetType"/>
                                             <xs:element name="EffectMode" minOccurs="0" type="ds:DataSetType"/>
-<!--                                            <xs:element name="Samples" minOccurs="0" type="ds:DataSetType"/>-->
                                         </xs:sequence>
                                     </xs:choice>
                                 </xs:extension>
@@ -647,15 +589,6 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                     <xs:choice>
                         <xs:element maxOccurs="unbounded" name="SimulationBlock" type="so:SimulationBlockType"/>
-<!--                        <xs:sequence> 
-                            <xs:element name="SimulatedProfiles" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
-                            <xs:element name="IndivParameters" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
-                            <xs:element name="RandomEffects" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
-                            <xs:element name="Covariates" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
-                            <xs:element name="PopulationParameters" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
-                            <xs:element name="Dosing" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
-                            <xs:element name="RawResultsFile" minOccurs="0" type="ds:ExternalFileType"/>
-                        </xs:sequence>-->
                     </xs:choice>
             </xs:extension>
         </xs:complexContent>
@@ -699,9 +632,7 @@ permissions and limitations under the License.
                 <xs:choice maxOccurs="unbounded">
                     <xs:sequence>
                         <xs:element minOccurs="0" name="DiagnosticPlotsStructuralModel" type="so:DiagnosticPlotsStructuralModelType"/>
-                        <!-- TEST -->
                         <xs:element minOccurs="0" name="DiagnosticPlotsIndividualParams" type="so:DiagnosticPlotsIndividualParamsType"/>
-                        <!-- /TEST -->
                     </xs:sequence>
                 </xs:choice>
             </xs:extension>
@@ -725,7 +656,6 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-    <!-- TEST -->
     <xs:complexType name="DiagnosticPlotsIndividualParamsType">
         <xs:annotation>
             <xs:documentation>Type for diagnostic pLots for individual parameters</xs:documentation>
@@ -735,16 +665,13 @@ permissions and limitations under the License.
                 <xs:choice maxOccurs="unbounded">
                     <xs:sequence>
                         <xs:element name="RandomEffects" minOccurs="0" type="ds:DataSetType"/>
-                        <!-- TEST name change -->
                         <xs:element name="IndivParamsCovariates" minOccurs="0" type="ds:DataSetType"/>
                         <xs:element name="DistributionIndivParams" minOccurs="0" type="ds:DataSetType"/>
-                        <!-- /TEST -->
                     </xs:sequence>
                 </xs:choice>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- /TEST -->
     
     <xs:complexType name="IndivFits">
         <xs:annotation>
@@ -770,15 +697,6 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:choice>
                     <xs:element maxOccurs="unbounded" name="OptimalDesignBlock" type="so:OptimalDesignBlockType"/>
-<!--                    <xs:sequence> 
-                        <xs:element name="FIM" minOccurs="0" type="so:SOMatrixType"/>
-                        <xs:element name="CovarianceMatrix" minOccurs="0" type="so:SOMatrixType"/>
-                        <xs:element name="ParameterPrecision" minOccurs="0" type="ds:DataSetType"/>
-                        <xs:element name="Criteria" minOccurs="0" type="ds:DataSetType"/>
-                        <xs:element name="Tests" minOccurs="0" type="ds:DataSetType"/>
-                        <xs:element name="SimulatedData" minOccurs="0" type="ds:ExternalFileType"/>
-                        <xs:element name="Design" minOccurs="0" type="ds:ExternalFileType"/>
-                    </xs:sequence>-->
                 </xs:choice>
                 <xs:attribute name="type" type="so:DesignTypeType"/>
             </xs:extension>
@@ -812,7 +730,6 @@ permissions and limitations under the License.
         </xs:restriction>
     </xs:simpleType>
     
-    <!-- TEST -->
     <xs:simpleType name="OtherMethodName">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Bootstrap"/>
@@ -821,7 +738,6 @@ permissions and limitations under the License.
             <xs:enumeration value="MultiDimLLP"/>
         </xs:restriction>
     </xs:simpleType>
-    <!-- /TEST -->
     
     <!-- elements -->
     <xs:element name="SO" type="so:SOType">
