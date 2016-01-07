@@ -24,7 +24,9 @@
         uri="../pharmml-spec/uncertweb/UncertML30.xsd"/>
     
     <!-- probonto -->
-
+    <system
+        systemId="http://www.pharmml.org/probonto/ProbOnto" 
+        uri="../pharmml-probonto/probOnto.xsd"/>
     
 </catalog>
 

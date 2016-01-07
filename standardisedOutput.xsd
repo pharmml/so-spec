@@ -36,7 +36,7 @@ permissions and limitations under the License.
         schemaLocation="http://www.uncertml.org/3.0"/>    
     
     <xs:import namespace="http://www.pharmml.org/probonto/ProbOnto" 
-        schemaLocation="../pharmml-probonto/probOnto.xsd"/>
+        schemaLocation="http://www.pharmml.org/probonto/ProbOnto"/>
     
     <xs:complexType name="SOType">
         <xs:annotation>
@@ -53,16 +53,6 @@ permissions and limitations under the License.
                     <xs:choice>
                         <xs:element maxOccurs="unbounded" name="SOBlock" type="so:SOBlockType"/>
                     </xs:choice>
-<!--                        <xs:sequence> 
-                            <!-\- same elements as in the SOBlockType -\->
-                            <xs:element minOccurs="0" name="ToolSettings" type="so:ToolSettingsType"/>
-                            <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
-                            <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
-                            <xs:element minOccurs="0" name="Estimation" type="so:EstimationType"/>
-                            <xs:element minOccurs="0" name="ModelDiagnostic" type="so:ModelDiagnosticType"/>
-                            <xs:element minOccurs="0" name="Simulation" type="so:SimulationType"/>
-                            <xs:element minOccurs="0" name="OptimalDesign" type="so:OptimalDesignType"/>
-                        </xs:sequence>-->
                 </xs:sequence>
                 <xs:attribute name="writtenVersion" type="xs:string" use="required">
                     <xs:annotation>
@@ -90,7 +80,6 @@ permissions and limitations under the License.
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:sequence>
-                    <!-- same elements as in the SOType -->
                     <xs:element minOccurs="0" name="ToolSettings" type="so:ToolSettingsType"/>
                     <xs:element minOccurs="0" name="RawResults" type="so:RawResultsType"/>
                     <xs:element minOccurs="0" name="TaskInformation" type="so:TaskInformationType"/>
@@ -127,7 +116,9 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:choice maxOccurs="unbounded">
                     <xs:sequence>
-                        <xs:element name="DataFile" minOccurs="0" maxOccurs="unbounded" type="ds:ExternalFileType"/>
+                        <!-- TEST -->
+                        <xs:element name="DataFile" minOccurs="0" maxOccurs="unbounded" type="ds:DataSetType"/>
+                        <!-- /TEST -->
                         <xs:element name="GraphicsFile" minOccurs="0" maxOccurs="unbounded" type="ds:ExternalFileType"/>
                     </xs:sequence>
                 </xs:choice>
