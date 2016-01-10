@@ -18,15 +18,14 @@
     <system systemId="http://www.pharmml.org/pharmml/0.7/ModelDefinition"
         uri="../pharmml-spec/definitions/modelDefinition.xsd"/>
     
-    <!-- uncertml -->
-    <system
-        systemId="http://www.uncertml.org/3.0" 
-        uri="../pharmml-spec/uncertweb/UncertML30.xsd"/>
-    
     <!-- probonto -->
     <system
         systemId="http://www.pharmml.org/probonto/ProbOnto" 
         uri="../pharmml-probonto/probOnto.xsd"/>
-    
+        
+    <system
+        systemId="http://www.uncertml.org/3.0" 
+        uri="../pharmml-spec/uncertweb/UncertML30.xsd"/>
+
 </catalog>
 
