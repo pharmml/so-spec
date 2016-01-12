@@ -2,20 +2,20 @@
 
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     
-    <system systemId="http://www.pharmml.org/pharmml/0.7/Maths" 
+    <system systemId="http://www.pharmml.org/pharmml/0.8/Maths" 
         uri="../pharmml-spec/definitions/maths.xsd"/>
     
     <system systemId="http://www.pharmml.org/so/0.3/StandardisedOutput"
         uri="standardisedOutput.xsd"/>
     
-    <system systemId="http://www.pharmml.org/pharmml/0.7/Dataset" 
+    <system systemId="http://www.pharmml.org/pharmml/0.8/Dataset" 
         uri="../pharmml-spec/definitions/dataset.xsd"/>
     
     <system
-        systemId="http://www.pharmml.org/pharmml/0.7/CommonTypes" 
+        systemId="http://www.pharmml.org/pharmml/0.8/CommonTypes" 
         uri="../pharmml-spec/definitions/commonTypes.xsd"/>
     
-    <system systemId="http://www.pharmml.org/pharmml/0.7/ModelDefinition"
+    <system systemId="http://www.pharmml.org/pharmml/0.8/ModelDefinition"
         uri="../pharmml-spec/definitions/modelDefinition.xsd"/>
     
     <!-- probonto -->
