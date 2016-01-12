@@ -599,6 +599,7 @@ permissions and limitations under the License.
                     <xs:element name="IndivParameters" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
                     <xs:element name="RandomEffects" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
                     <xs:element name="Covariates" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
+                    <xs:element name="Regressors" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
                     <xs:element name="PopulationParameters" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
                     <xs:element name="Dosing" minOccurs="0" maxOccurs="unbounded" type="so:SimulationSubType"/>
                     <xs:element name="RawResultsFile" minOccurs="0" type="ds:ExternalFileType"/>
