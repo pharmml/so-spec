@@ -200,9 +200,9 @@ permissions and limitations under the License.
                             <xs:documentation>Population and individual predictions in one table</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element minOccurs="0" name="Likelihood" type="so:LikelihoodType">
+                    <xs:element minOccurs="0" name="OFmeasures" type="so:OFmeasuresType">
                         <xs:annotation>
-                            <xs:documentation>The Likelihood</xs:documentation>
+                            <xs:documentation>The OF measures</xs:documentation>
                         </xs:annotation>
                     </xs:element>
                     <xs:element minOccurs="0" name="TargetToolMessages" type="so:TargetToolMessagesType">
@@ -510,7 +510,7 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-    <xs:complexType name="LikelihoodType">
+    <xs:complexType name="OFmeasuresType">
         <xs:annotation>
             <xs:documentation>Type defining the likelihood.</xs:documentation>
         </xs:annotation>
@@ -518,8 +518,10 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:choice maxOccurs="unbounded">
                     <xs:sequence>
+                        <xs:element name="Likelihood" minOccurs="0" type="ct:RealValueType"/>
                         <xs:element name="LogLikelihood" minOccurs="0" type="ct:RealValueType"/>
                         <xs:element name="Deviance" minOccurs="0" type="ct:RealValueType"/>
+                        <xs:element name="ToolObjFunction" minOccurs="0" type="so:ToolObjFunctionType"/>
                         <xs:element name="IndividualContribToLL" minOccurs="0" type="ds:DataSetType"/>
                         <xs:element name="InformationCriteria" minOccurs="0" type="so:InformationCriteriaType"/>
                     </xs:sequence>
@@ -527,6 +529,19 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
+    
+    <!-- TEST -->
+    <xs:complexType name="ToolObjFunctionType">
+        <xs:annotation>
+            <xs:documentation>Tool-specific objective function type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ct:RealValueType">
+                <xs:attribute name="type" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- TEST -->
     
     <xs:complexType name="InformationCriteriaType">
         <xs:annotation>
@@ -617,24 +632,23 @@ permissions and limitations under the License.
             <xs:extension base="ct:PharmMLRootType">
                 <xs:choice maxOccurs="unbounded">
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="DiagnosticPlotsStructuralModel" type="so:DiagnosticPlotsStructuralModelType"/>
-                        <xs:element minOccurs="0" name="DiagnosticPlotsIndividualParams" type="so:DiagnosticPlotsIndividualParamsType"/>
+                        <xs:element minOccurs="0" name="DiagnosticStructuralModel" type="so:DiagnosticStructuralModelType"/>
+                        <xs:element minOccurs="0" name="DiagnosticIndividualParams" type="so:DiagnosticIndividualParamsType"/>
                     </xs:sequence>
                 </xs:choice>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
     
-    <xs:complexType name="DiagnosticPlotsStructuralModelType">
+    <xs:complexType name="DiagnosticStructuralModelType">
         <xs:annotation>
-            <xs:documentation>Type for diagnostic pLots for the structural model</xs:documentation>
+            <xs:documentation>Type for diagnostic for the structural model</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
                 <xs:choice maxOccurs="unbounded">
                     <xs:sequence>
-                        <xs:element name="IndivFits" minOccurs="0" type="so:IndivFits"/>
-                        <xs:element name="IndivPredictionVsObserv" minOccurs="0" type="ds:DataSetType"/>
+                        <xs:element name="IndivObservationPrediction" minOccurs="0" type="ds:DataSetType"/>
                         <xs:element name="VPC" minOccurs="0" type="ds:DataSetType"/>
                     </xs:sequence>
                 </xs:choice>
@@ -642,9 +656,9 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-    <xs:complexType name="DiagnosticPlotsIndividualParamsType">
+    <xs:complexType name="DiagnosticIndividualParamsType">
         <xs:annotation>
-            <xs:documentation>Type for diagnostic pLots for individual parameters</xs:documentation>
+            <xs:documentation>Type for diagnostic for individual parameters</xs:documentation>
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ct:PharmMLRootType">
@@ -659,7 +673,7 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-    <xs:complexType name="IndivFits">
+<!--    <xs:complexType name="IndivFits">
         <xs:annotation>
             <xs:documentation>Type for indivitual fits</xs:documentation>
         </xs:annotation>
@@ -673,8 +687,8 @@ permissions and limitations under the License.
                 </xs:choice>
             </xs:extension>
         </xs:complexContent>
-    </xs:complexType>
-
+    </xs:complexType>-->
+    
     <xs:complexType name="OptimalDesignType">
         <xs:annotation>
             <xs:documentation>Type for the simulation section of the SO.</xs:documentation>
