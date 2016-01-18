@@ -200,7 +200,7 @@ permissions and limitations under the License.
                             <xs:documentation>Population and individual predictions in one table</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element minOccurs="0" name="OFmeasures" type="so:OFmeasuresType">
+                    <xs:element minOccurs="0" name="OFMeasures" type="so:OFMeasuresType">
                         <xs:annotation>
                             <xs:documentation>The OF measures</xs:documentation>
                         </xs:annotation>
@@ -510,7 +510,7 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-    <xs:complexType name="OFmeasuresType">
+    <xs:complexType name="OFMeasuresType">
         <xs:annotation>
             <xs:documentation>Type defining the likelihood.</xs:documentation>
         </xs:annotation>
