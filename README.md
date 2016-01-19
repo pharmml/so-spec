@@ -1,7 +1,7 @@
 
 ======================================================
 
-Specification for SO: Standardised Output for PharmML, version 0.2
+Specification for SO: Standardised Output for PharmML, version 0.3
 
 ======================================================
 

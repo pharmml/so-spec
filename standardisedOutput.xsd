@@ -14,7 +14,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
 implied. See the License for the specific language governing
 permissions and limitations under the License.
--->    
+-->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://www.pharmml.org/so/0.3/StandardisedOutput"
     xmlns:so="http://www.pharmml.org/so/0.3/StandardisedOutput"
@@ -530,7 +530,6 @@ permissions and limitations under the License.
         </xs:complexContent>
     </xs:complexType>
     
-    <!-- TEST -->
     <xs:complexType name="ToolObjFunctionType">
         <xs:annotation>
             <xs:documentation>Tool-specific objective function type.</xs:documentation>
@@ -541,7 +540,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!-- TEST -->
     
     <xs:complexType name="InformationCriteriaType">
         <xs:annotation>
@@ -672,22 +670,6 @@ permissions and limitations under the License.
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
-<!--    <xs:complexType name="IndivFits">
-        <xs:annotation>
-            <xs:documentation>Type for indivitual fits</xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="ct:PharmMLRootType">
-                <xs:choice maxOccurs="unbounded">
-                    <xs:sequence>
-                        <xs:element name="ObservationTable" minOccurs="0" type="ds:DataSetType"/>
-                        <xs:element name="PredictionTable" minOccurs="0" type="ds:DataSetType"/>
-                    </xs:sequence>
-                </xs:choice>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>-->
     
     <xs:complexType name="OptimalDesignType">
         <xs:annotation>

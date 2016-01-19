@@ -35,4 +35,13 @@ minor edits.0.1.2	14 April 2015
 New posterior distribution elements in bootstrap element and 
 related, new attribute in simulation child-elements 0.2	22 April 2015	
 Multiple tool-setting files allowed, adding footnotes on dosing 
-records inclusion, minor corrections
+records inclusion, minor corrections0.3	19 January 2016
+- Diagnostic section redesigned 
+- IOV support 
+- Support for empiric distributions 
+- New objective function measures added 
+- Extensions in columnType attribute
+- Compatibility with PharmML v0.8 
+- Specification moved to a new format. 
+- Changed name from 'Standardised Output' to 'Standard Output’ 
+
