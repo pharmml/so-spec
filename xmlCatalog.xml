@@ -18,6 +18,9 @@
     <system systemId="http://www.pharmml.org/pharmml/0.8/ModelDefinition"
         uri="../pharmml-spec/definitions/modelDefinition.xsd"/>
     
+    <system systemId="http://www.pharmml.org/pharmml/0.8/TrialDesign"
+        uri="../pharmml-spec/definitions/TrialDesign.xsd"/>
+    
     <!-- probonto -->
     <system
         systemId="http://www.pharmml.org/probonto/ProbOnto" 
