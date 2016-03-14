@@ -23,7 +23,7 @@ permissions and limitations under the License.
     xmlns:ct="http://www.pharmml.org/pharmml/0.8/CommonTypes"
     xmlns:ds="http://www.pharmml.org/pharmml/0.8/Dataset"
     xmlns:po="http://www.pharmml.org/probonto/ProbOnto"
-    version="1.1">
+    version="0.3.1">
     
     <xs:import namespace="http://www.pharmml.org/pharmml/0.8/CommonTypes"
         schemaLocation="http://www.pharmml.org/pharmml/0.8/CommonTypes"/>
