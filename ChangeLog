@@ -45,3 +45,6 @@ records inclusion, minor corrections0.3	19 January 2016
 - Specification moved to a new format. 
 - Changed name from 'Standardised Output' to 'Standard Output’ 
 
+0.3.1	16 March 2016
+- Integer declaration fixed
+
