@@ -2,23 +2,23 @@
 
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     
-    <system systemId="http://www.pharmml.org/pharmml/0.8/Maths" 
+    <system systemId="http://www.pharmml.org/pharmml/1.0/Maths" 
         uri="../pharmml-spec/definitions/maths.xsd"/>
     
-    <system systemId="http://www.pharmml.org/so/0.3/StandardisedOutput"
+    <system systemId="http://www.pharmml.org/so/1.0/StandardisedOutput"
         uri="standardisedOutput.xsd"/>
     
-    <system systemId="http://www.pharmml.org/pharmml/0.8/Dataset" 
+    <system systemId="http://www.pharmml.org/pharmml/1.0/Dataset" 
         uri="../pharmml-spec/definitions/dataset.xsd"/>
     
     <system
-        systemId="http://www.pharmml.org/pharmml/0.8/CommonTypes" 
+        systemId="http://www.pharmml.org/pharmml/1.0/CommonTypes" 
         uri="../pharmml-spec/definitions/commonTypes.xsd"/>
     
-    <system systemId="http://www.pharmml.org/pharmml/0.8/ModelDefinition"
+    <system systemId="http://www.pharmml.org/pharmml/1.0/ModelDefinition"
         uri="../pharmml-spec/definitions/modelDefinition.xsd"/>
     
-    <system systemId="http://www.pharmml.org/pharmml/0.8/TrialDesign"
+    <system systemId="http://www.pharmml.org/pharmml/1.0/TrialDesign"
         uri="../pharmml-spec/definitions/TrialDesign.xsd"/>
     
     <!-- probonto -->
